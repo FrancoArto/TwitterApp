@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+ReactShallowRenderer {
+  "_context": Object {},
+  "_element": <ErrorInApp
+    errorMessage="ERROR MESSAGE"
+  />,
+  "_forcedUpdate": false,
+  "_instance": ErrorInApp {
+    "context": Object {},
+    "props": Object {
+      "errorMessage": "ERROR MESSAGE",
+    },
+    "refs": Object {},
+    "state": null,
+    "updater": Updater {
+      "_callbacks": Array [],
+      "_renderer": [Circular],
+    },
+  },
+  "_newState": null,
+  "_rendered": <Component
+    style={
+      Object {
+        "backgroundColor": "#cc3132",
+        "flex": 1,
+      }
+    }
+  >
+    <Component
+      style={
+        Object {
+          "marginLeft": 8,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "white",
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Ups! we have a error in : 
+        ERROR MESSAGE
+         
+      </Text>
+    </Component>
+  </Component>,
+  "_rendering": false,
+  "_updater": Updater {
+    "_callbacks": Array [],
+    "_renderer": [Circular],
+  },
+}
+`;

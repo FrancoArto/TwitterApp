@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders connected to store 1`] = `
+<SettingsScreen
+  SettingsChanged={[Function]}
+  settings={
+    Object {
+      "defaultInfo": false,
+      "following": false,
+      "verified": false,
+      "withLink": false,
+      "withTruncatedText": false,
+    }
+  }
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "clear": [Function],
+        "get": [Function],
+        "notify": [Function],
+        "subscribe": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "@@observable": [Function],
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": [Function],
+    }
+  }
+/>
+`;
+
+exports[`renders without crashing 1`] = `
+<Component
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "flex": 1,
+    }
+  }
+>
+  <Settings
+    onDefaultInfoChange={[Function]}
+    onFollowingChange={[Function]}
+    onVerifiedChange={[Function]}
+    onWithLinkChange={[Function]}
+    onWithTruncatedTextChange={[Function]}
+  />
+</Component>
+`;

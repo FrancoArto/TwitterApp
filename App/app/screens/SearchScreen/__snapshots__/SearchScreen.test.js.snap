@@ -1,0 +1,509 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loads without crashing 1`] = `
+<Component
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <ActivityIndicator
+    animating={true}
+    color="#999999"
+    hidesWhenStopped={true}
+    size="small"
+  />
+</Component>
+`;
+
+exports[`renders connected to store 1`] = `
+<SearchScreen
+  fetchMoreResults={[Function]}
+  fetchSearchBegin={[Function]}
+  fetchSingleTweetBegin={[Function]}
+  fetchTrendsBegin={[Function]}
+  fetchUserDataRequest={[Function]}
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "clear": [Function],
+        "get": [Function],
+        "notify": [Function],
+        "subscribe": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "@@observable": [Function],
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": [Function],
+    }
+  }
+  trends={
+    Object {
+      "data": Array [],
+      "error": null,
+      "loading": false,
+    }
+  }
+  tweets={
+    Object {
+      "data": Array [],
+      "error": null,
+      "loading": false,
+      "loadingSingleTweet": false,
+      "searchResults": Array [],
+      "searchText": null,
+      "singleTweet": Object {},
+      "singleTweetId": null,
+      "userTimeline": Array [],
+    }
+  }
+/>
+`;
+
+exports[`renders results without crashing 1`] = `
+<Component
+  style={
+    Object {
+      "backgroundColor": "#f5f5f5",
+      "flex": 1,
+      "paddingHorizontal": 5,
+      "paddingTop": 10,
+    }
+  }
+>
+  <Search
+    onChangeText={[Function]}
+    onClearPress={[Function]}
+    onSearch={[Function]}
+    searchText=""
+  />
+  <Fade
+    fading={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#f5f5f5",
+        "flex": 1,
+        "paddingHorizontal": 5,
+        "paddingTop": 10,
+      }
+    }
+    visible={false}
+  >
+    <SearchResult
+      goToUserProfile={[Function]}
+      handleOnEndReached={[Function]}
+      loading={false}
+      onTweetPress={[Function]}
+      searchText=""
+    />
+  </Fade>
+</Component>
+`;
+
+exports[`renders trends without crashing 1`] = `
+<Component
+  style={
+    Object {
+      "backgroundColor": "#f5f5f5",
+      "flex": 1,
+      "paddingHorizontal": 5,
+      "paddingTop": 10,
+    }
+  }
+>
+  <Search
+    onChangeText={[Function]}
+    onClearPress={[Function]}
+    onSearch={[Function]}
+    searchText=""
+  />
+  <Fade
+    fading={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#f5f5f5",
+        "flex": 1,
+        "paddingHorizontal": 5,
+        "paddingTop": 10,
+      }
+    }
+    visible={true}
+  >
+    <TrendList
+      data={
+        Array [
+          Object {
+            "name": "Nahir Galarza",
+            "promoted_content": null,
+            "query": "%22Nahir+Galarza%22",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=%22Nahir+Galarza%22",
+          },
+          Object {
+            "name": "#FiestOT18",
+            "promoted_content": null,
+            "query": "%23FiestOT18",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=%23FiestOT18",
+          },
+          Object {
+            "name": "#NoMeMolestas",
+            "promoted_content": null,
+            "query": "%23NoMeMolestas",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=%23NoMeMolestas",
+          },
+          Object {
+            "name": "Mandzukic",
+            "promoted_content": null,
+            "query": "Mandzukic",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=Mandzukic",
+          },
+          Object {
+            "name": "#Ligue1xESPN",
+            "promoted_content": null,
+            "query": "%23Ligue1xESPN",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=%23Ligue1xESPN",
+          },
+          Object {
+            "name": "#LoMejorDeCombate",
+            "promoted_content": null,
+            "query": "%23LoMejorDeCombate",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=%23LoMejorDeCombate",
+          },
+          Object {
+            "name": "Rosedal",
+            "promoted_content": null,
+            "query": "Rosedal",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=Rosedal",
+          },
+          Object {
+            "name": "La Educación Pública",
+            "promoted_content": null,
+            "query": "%22La+Educaci%C3%B3n+P%C3%BAblica%22",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=%22La+Educaci%C3%B3n+P%C3%BAblica%22",
+          },
+          Object {
+            "name": "Aduriz",
+            "promoted_content": null,
+            "query": "Aduriz",
+            "tweet_volume": 15583,
+            "url": "http://twitter.com/search?q=Aduriz",
+          },
+          Object {
+            "name": "Bidoglio",
+            "promoted_content": null,
+            "query": "Bidoglio",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=Bidoglio",
+          },
+          Object {
+            "name": "La Angostura",
+            "promoted_content": null,
+            "query": "%22La+Angostura%22",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=%22La+Angostura%22",
+          },
+          Object {
+            "name": "#クリスマスボックス",
+            "promoted_content": null,
+            "query": "%23%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%9E%E3%82%B9%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9",
+            "tweet_volume": 2494801,
+            "url": "http://twitter.com/search?q=%23%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%9E%E3%82%B9%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9",
+          },
+          Object {
+            "name": "Rafael Santos Borré",
+            "promoted_content": null,
+            "query": "%22Rafael+Santos+Borr%C3%A9%22",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=%22Rafael+Santos+Borr%C3%A9%22",
+          },
+          Object {
+            "name": "El Real Madrid",
+            "promoted_content": null,
+            "query": "%22El+Real+Madrid%22",
+            "tweet_volume": 23662,
+            "url": "http://twitter.com/search?q=%22El+Real+Madrid%22",
+          },
+          Object {
+            "name": "Lionel",
+            "promoted_content": null,
+            "query": "Lionel",
+            "tweet_volume": 21320,
+            "url": "http://twitter.com/search?q=Lionel",
+          },
+          Object {
+            "name": "Sugar",
+            "promoted_content": null,
+            "query": "Sugar",
+            "tweet_volume": 112213,
+            "url": "http://twitter.com/search?q=Sugar",
+          },
+          Object {
+            "name": "Pity",
+            "promoted_content": null,
+            "query": "Pity",
+            "tweet_volume": 79391,
+            "url": "http://twitter.com/search?q=Pity",
+          },
+          Object {
+            "name": "Alfaro",
+            "promoted_content": null,
+            "query": "Alfaro",
+            "tweet_volume": 55308,
+            "url": "http://twitter.com/search?q=Alfaro",
+          },
+          Object {
+            "name": "Navidad",
+            "promoted_content": null,
+            "query": "Navidad",
+            "tweet_volume": 557910,
+            "url": "http://twitter.com/search?q=Navidad",
+          },
+          Object {
+            "name": "Papá Noel",
+            "promoted_content": null,
+            "query": "%22Pap%C3%A1+Noel%22",
+            "tweet_volume": 49989,
+            "url": "http://twitter.com/search?q=%22Pap%C3%A1+Noel%22",
+          },
+          Object {
+            "name": "De la Cruz",
+            "promoted_content": null,
+            "query": "%22De+la+Cruz%22",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=%22De+la+Cruz%22",
+          },
+          Object {
+            "name": "álvarez",
+            "promoted_content": null,
+            "query": "%C3%A1lvarez",
+            "tweet_volume": 14224,
+            "url": "http://twitter.com/search?q=%C3%A1lvarez",
+          },
+          Object {
+            "name": "Zuculini",
+            "promoted_content": null,
+            "query": "Zuculini",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=Zuculini",
+          },
+          Object {
+            "name": "Arroyo Salgado",
+            "promoted_content": null,
+            "query": "%22Arroyo+Salgado%22",
+            "tweet_volume": 16473,
+            "url": "http://twitter.com/search?q=%22Arroyo+Salgado%22",
+          },
+          Object {
+            "name": "Bird Box",
+            "promoted_content": null,
+            "query": "%22Bird+Box%22",
+            "tweet_volume": 81792,
+            "url": "http://twitter.com/search?q=%22Bird+Box%22",
+          },
+          Object {
+            "name": "Nelson Castro",
+            "promoted_content": null,
+            "query": "%22Nelson+Castro%22",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=%22Nelson+Castro%22",
+          },
+          Object {
+            "name": "Felices Fiestas",
+            "promoted_content": null,
+            "query": "%22Felices+Fiestas%22",
+            "tweet_volume": 52778,
+            "url": "http://twitter.com/search?q=%22Felices+Fiestas%22",
+          },
+          Object {
+            "name": "Gonzalo Martínez",
+            "promoted_content": null,
+            "query": "%22Gonzalo+Mart%C3%ADnez%22",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=%22Gonzalo+Mart%C3%ADnez%22",
+          },
+          Object {
+            "name": "Luca Prodan",
+            "promoted_content": null,
+            "query": "%22Luca+Prodan%22",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=%22Luca+Prodan%22",
+          },
+          Object {
+            "name": "Sergio Ramos",
+            "promoted_content": null,
+            "query": "%22Sergio+Ramos%22",
+            "tweet_volume": 23106,
+            "url": "http://twitter.com/search?q=%22Sergio+Ramos%22",
+          },
+          Object {
+            "name": "Juan Grabois",
+            "promoted_content": null,
+            "query": "%22Juan+Grabois%22",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=%22Juan+Grabois%22",
+          },
+          Object {
+            "name": "Vamos River",
+            "promoted_content": null,
+            "query": "%22Vamos+River%22",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=%22Vamos+River%22",
+          },
+          Object {
+            "name": "Federico Moura",
+            "promoted_content": null,
+            "query": "%22Federico+Moura%22",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=%22Federico+Moura%22",
+          },
+          Object {
+            "name": "Nisman",
+            "promoted_content": null,
+            "query": "Nisman",
+            "tweet_volume": 21963,
+            "url": "http://twitter.com/search?q=Nisman",
+          },
+          Object {
+            "name": "Crystal Palace",
+            "promoted_content": null,
+            "query": "%22Crystal+Palace%22",
+            "tweet_volume": 53087,
+            "url": "http://twitter.com/search?q=%22Crystal+Palace%22",
+          },
+          Object {
+            "name": "Facundo Daelli",
+            "promoted_content": null,
+            "query": "%22Facundo+Daelli%22",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=%22Facundo+Daelli%22",
+          },
+          Object {
+            "name": "Santiago del Moro",
+            "promoted_content": null,
+            "query": "%22Santiago+del+Moro%22",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=%22Santiago+del+Moro%22",
+          },
+          Object {
+            "name": "Liverpool",
+            "promoted_content": null,
+            "query": "Liverpool",
+            "tweet_volume": 141820,
+            "url": "http://twitter.com/search?q=Liverpool",
+          },
+          Object {
+            "name": "Celta",
+            "promoted_content": null,
+            "query": "Celta",
+            "tweet_volume": 22292,
+            "url": "http://twitter.com/search?q=Celta",
+          },
+          Object {
+            "name": "Nochebuena",
+            "promoted_content": null,
+            "query": "Nochebuena",
+            "tweet_volume": 12987,
+            "url": "http://twitter.com/search?q=Nochebuena",
+          },
+          Object {
+            "name": "Abu Dhabi",
+            "promoted_content": null,
+            "query": "%22Abu+Dhabi%22",
+            "tweet_volume": 12414,
+            "url": "http://twitter.com/search?q=%22Abu+Dhabi%22",
+          },
+          Object {
+            "name": "#BuenSabado",
+            "promoted_content": null,
+            "query": "%23BuenSabado",
+            "tweet_volume": 15221,
+            "url": "http://twitter.com/search?q=%23BuenSabado",
+          },
+          Object {
+            "name": "#serrandincampeon",
+            "promoted_content": null,
+            "query": "%23serrandincampeon",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=%23serrandincampeon",
+          },
+          Object {
+            "name": "#PeligroSinCodificar",
+            "promoted_content": null,
+            "query": "%23PeligroSinCodificar",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=%23PeligroSinCodificar",
+          },
+          Object {
+            "name": "#ElDementeIsOverParty",
+            "promoted_content": null,
+            "query": "%23ElDementeIsOverParty",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=%23ElDementeIsOverParty",
+          },
+          Object {
+            "name": "#PongamosUnaFotoDeCFK",
+            "promoted_content": null,
+            "query": "%23PongamosUnaFotoDeCFK",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=%23PongamosUnaFotoDeCFK",
+          },
+          Object {
+            "name": "#SimonCowellOverParty",
+            "promoted_content": null,
+            "query": "%23SimonCowellOverParty",
+            "tweet_volume": 261166,
+            "url": "http://twitter.com/search?q=%23SimonCowellOverParty",
+          },
+          Object {
+            "name": "#LaVozElTeatro",
+            "promoted_content": null,
+            "query": "%23LaVozElTeatro",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=%23LaVozElTeatro",
+          },
+          Object {
+            "name": "#FelizAñoNuevo",
+            "promoted_content": null,
+            "query": "%23FelizA%C3%B1oNuevo",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=%23FelizA%C3%B1oNuevo",
+          },
+          Object {
+            "name": "#Super20",
+            "promoted_content": null,
+            "query": "%23Super20",
+            "tweet_volume": null,
+            "url": "http://twitter.com/search?q=%23Super20",
+          },
+        ]
+      }
+      handleOnTrendPress={[Function]}
+    />
+  </Fade>
+</Component>
+`;

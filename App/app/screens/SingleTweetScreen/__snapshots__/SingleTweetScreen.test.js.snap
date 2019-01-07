@@ -1,0 +1,418 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders activity indicator 1`] = `<AppLoading />`;
+
+exports[`renders activity indicator 2`] = `
+<Component
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#fff",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <ActivityIndicator
+    animating={true}
+    color="#999999"
+    hidesWhenStopped={true}
+    size="small"
+  />
+</Component>
+`;
+
+exports[`renders connected to store 1`] = `
+<SingleTweetScreen
+  fetchUserDataRequest={[Function]}
+  loading={false}
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "clear": [Function],
+        "get": [Function],
+        "notify": [Function],
+        "subscribe": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "@@observable": [Function],
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": [Function],
+    }
+  }
+  tweet={Object {}}
+/>
+`;
+
+exports[`renders loaded tweet 1`] = `<AppLoading />`;
+
+exports[`renders loaded tweet 2`] = `
+<Component
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#f4f4f4",
+        "flex": 1,
+        "flexDirection": "column",
+      },
+    ]
+  }
+>
+  <Component
+    style={
+      Array [
+        Object {
+          "borderWidth": 0,
+          "flex": 0.5,
+          "flexDirection": "row",
+          "margin": 0,
+          "paddingBottom": 0,
+          "paddingTop": 12.5,
+        },
+      ]
+    }
+  >
+    <Component
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "padding": 12.5,
+            "width": 187.5,
+          },
+        ]
+      }
+    >
+      <TouchableOpacity
+        activeOpacity={0.2}
+        onPress={[Function]}
+      >
+        <Styled(Thumbnail)
+          large={true}
+          source={
+            Object {
+              "uri": "https://pbs.twimg.com/profile_images/1053387941752369152/r4pGBF3K_normal.jpg",
+            }
+          }
+        />
+      </TouchableOpacity>
+    </Component>
+    <Component
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "flexDirection": "column",
+            "justifyContent": "flex-end",
+            "marginRight": 250,
+            "marginTop": 12.5,
+            "padding": 12.5,
+            "width": 562.5,
+          },
+        ]
+      }
+    >
+      <Component
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "margin": 0,
+              "padding": 0,
+            },
+          ]
+        }
+      >
+        <Styled(Text)
+          style={
+            Array [
+              Object {
+                "color": "#040404",
+                "fontSize": 37.5,
+                "fontWeight": "bold",
+              },
+            ]
+          }
+        >
+           
+          Clarín
+           
+        </Styled(Text)>
+      </Component>
+      <Component
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "margin": 0,
+              "padding": 0,
+            },
+          ]
+        }
+      >
+        <Styled(Text)
+          style={
+            Array [
+              Object {
+                "color": "#5D5D5D",
+                "fontSize": 28.846153846153847,
+              },
+            ]
+          }
+        >
+           @
+          clarincom
+        </Styled(Text)>
+      </Component>
+    </Component>
+  </Component>
+  <Component
+    style={
+      Array [
+        Object {
+          "borderWidth": 0,
+          "flex": 0.6,
+          "flexDirection": "row",
+          "marginBottom": 0,
+          "marginLeft": 12.5,
+          "marginRight": 12.5,
+          "marginTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 12.5,
+          "paddingRight": 12.5,
+          "paddingTop": 0,
+        },
+      ]
+    }
+  >
+    <_class
+      linkDefault={true}
+      linkStyle={
+        Object {
+          "color": "#2980b9",
+        }
+      }
+    >
+      <Styled(Text)
+        style={
+          Array [
+            Object {
+              "color": "#5D5D5D",
+              "fontSize": 37.5,
+            },
+          ]
+        }
+      >
+         
+        Detuvieron a un cura en San Pedro: lo acusan de abusar de nenes de un jardín de infantes https://t.co/Cqm0vehy5P https://t.co/OLSi1XswSf
+         
+      </Styled(Text)>
+    </_class>
+  </Component>
+  <Component
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "marginTop": 0,
+          "paddingBottom": 9.375,
+          "paddingTop": 0,
+        },
+      ]
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "http://pbs.twimg.com/media/DtqVRn_XgAAVAHD.jpg",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "borderRadius": 20,
+            "flex": 0.98,
+            "height": "90%",
+            "marginBottom": 0,
+            "marginTop": "2%",
+            "paddingBottom": 0,
+            "paddingTop": 0,
+          },
+        ]
+      }
+    />
+  </Component>
+  <Component
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+          "flex": 0.5,
+          "flexDirection": "row",
+          "height": 222.33333333333334,
+          "justifyContent": "center",
+          "margin": 0,
+          "marginLeft": 0,
+          "marginRight": 0,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "paddingTop": 9.375,
+        },
+      ]
+    }
+  >
+    <Styled(Button)
+      iconLeft={true}
+      primary={true}
+      style={
+        Array [
+          Object {
+            "alignSelf": "center",
+            "flex": 1,
+            "flexDirection": "column-reverse",
+            "margin": 0,
+            "padding": 0,
+          },
+        ]
+      }
+      transparent={true}
+    >
+      <Styled(Icon)
+        name="heart"
+        style={
+          Array [
+            Object {
+              "color": "#909090",
+              "fontSize": 75,
+              "marginLeft": 9.375,
+              "marginRight": 9.375,
+            },
+          ]
+        }
+        type="SimpleLineIcons"
+      />
+      <Styled(Text)
+        style={
+          Array [
+            Object {
+              "color": "#5D5D5D",
+              "fontSize": 41.666666666666664,
+            },
+          ]
+        }
+      >
+        26
+      </Styled(Text)>
+    </Styled(Button)>
+    <Styled(Button)
+      iconLeft={true}
+      primary={true}
+      style={
+        Array [
+          Object {
+            "alignSelf": "center",
+            "flex": 1,
+            "flexDirection": "column-reverse",
+            "margin": 0,
+            "padding": 0,
+          },
+        ]
+      }
+      transparent={true}
+    >
+      <Styled(Icon)
+        name="refresh"
+        style={
+          Array [
+            Object {
+              "color": "#909090",
+              "fontSize": 75,
+              "marginLeft": 9.375,
+              "marginRight": 9.375,
+            },
+          ]
+        }
+        type="SimpleLineIcons"
+      />
+      <Styled(Text)
+        style={
+          Array [
+            Object {
+              "color": "#5D5D5D",
+              "fontSize": 41.666666666666664,
+            },
+          ]
+        }
+      >
+        14
+      </Styled(Text)>
+    </Styled(Button)>
+    <Styled(Button)
+      iconLeft={true}
+      primary={true}
+      style={
+        Array [
+          Object {
+            "alignSelf": "center",
+            "flex": 1,
+            "flexDirection": "column-reverse",
+            "margin": 0,
+            "padding": 0,
+          },
+        ]
+      }
+      transparent={true}
+    >
+      <Styled(Icon)
+        name="bubble"
+        style={
+          Array [
+            Object {
+              "color": "#909090",
+              "fontSize": 75,
+              "marginLeft": 9.375,
+              "marginRight": 9.375,
+            },
+          ]
+        }
+        type="SimpleLineIcons"
+      />
+      <Styled(Text)
+        style={
+          Array [
+            Object {
+              "color": "#5D5D5D",
+              "fontSize": 41.666666666666664,
+            },
+          ]
+        }
+      />
+    </Styled(Button)>
+  </Component>
+</Component>
+`;
+
+exports[`renders without crashing 1`] = `<AppLoading />`;

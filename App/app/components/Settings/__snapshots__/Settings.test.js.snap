@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<Styled(Content)>
+  <Styled(Card)>
+    <Styled(CardItem)
+      style={
+        Object {
+          "backgroundColor": "#79a6d2",
+        }
+      }
+    >
+      <Styled(Body)>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#FFFFFF",
+              "fontWeight": "800",
+            }
+          }
+        >
+          Silence notifications from...
+        </Text>
+      </Styled(Body)>
+    </Styled(CardItem)>
+  </Styled(Card)>
+  <Styled(ListItem)>
+    <Styled(Body)>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      >
+        People who have not verified the account
+      </Text>
+    </Styled(Body)>
+    <Styled(CheckBox)
+      checked={false}
+      onPress={[Function]}
+    />
+  </Styled(ListItem)>
+  <Styled(ListItem)>
+    <Styled(Body)>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      >
+        People who do not follow
+      </Text>
+    </Styled(Body)>
+    <Styled(CheckBox)
+      checked={true}
+      onPress={[Function]}
+    />
+  </Styled(ListItem)>
+  <Styled(ListItem)>
+    <Styled(Body)>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      >
+        People who have default profile information
+      </Text>
+    </Styled(Body)>
+    <Styled(CheckBox)
+      checked={false}
+      onPress={[Function]}
+    />
+  </Styled(ListItem)>
+  <Styled(ListItem)>
+    <Styled(Body)>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      >
+        Tweets that contains a link
+      </Text>
+    </Styled(Body)>
+    <Styled(CheckBox)
+      checked={true}
+      onPress={[Function]}
+    />
+  </Styled(ListItem)>
+  <Styled(ListItem)>
+    <Styled(Body)>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      >
+        Tweets that has text truncated
+      </Text>
+    </Styled(Body)>
+    <Styled(CheckBox)
+      checked={false}
+      onPress={[Function]}
+    />
+  </Styled(ListItem)>
+</Styled(Content)>
+`;

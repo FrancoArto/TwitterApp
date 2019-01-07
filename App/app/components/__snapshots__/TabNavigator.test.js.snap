@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+ReactShallowRenderer {
+  "_context": Object {},
+  "_element": <NavigationContainer />,
+  "_forcedUpdate": false,
+  "_instance": NavigationContainer {
+    "_actionEventSubscribers": Set {},
+    "_getScreenProps": [Function],
+    "_handleOpenURL": [Function],
+    "_initialAction": Object {
+      "type": "Navigation/INIT",
+    },
+    "_navigation": Object {
+      "actions": Object {},
+      "addListener": [Function],
+      "dangerouslyGetParent": [Function],
+      "dispatch": [Function],
+      "getChildNavigation": [Function],
+      "getScreenProps": [Function],
+      "goBack": [Function],
+      "isFocused": [Function],
+      "navigate": [Function],
+      "router": Object {
+        "childRouters": Object {
+          "Forms": null,
+          "Other": null,
+          "Settings": null,
+        },
+        "getActionCreators": [Function],
+        "getActionForPathAndParams": [Function],
+        "getComponentForRouteName": [Function],
+        "getComponentForState": [Function],
+        "getPathAndParamsForState": [Function],
+        "getScreenOptions": [Function],
+        "getStateForAction": [Function],
+      },
+      "setParams": [Function],
+      "state": Object {
+        "index": 0,
+        "isTransitioning": false,
+        "routes": Array [
+          Object {
+            "key": "Forms",
+            "params": undefined,
+            "routeName": "Forms",
+          },
+          Object {
+            "key": "Other",
+            "params": undefined,
+            "routeName": "Other",
+          },
+          Object {
+            "key": "Settings",
+            "params": undefined,
+            "routeName": "Settings",
+          },
+        ],
+      },
+    },
+    "_persistNavigationState": [Function],
+    "context": Object {},
+    "dispatch": [Function],
+    "props": Object {},
+    "refs": Object {},
+    "state": Object {
+      "nav": Object {
+        "index": 0,
+        "isTransitioning": false,
+        "routes": Array [
+          Object {
+            "key": "Forms",
+            "params": undefined,
+            "routeName": "Forms",
+          },
+          Object {
+            "key": "Other",
+            "params": undefined,
+            "routeName": "Other",
+          },
+          Object {
+            "key": "Settings",
+            "params": undefined,
+            "routeName": "Settings",
+          },
+        ],
+      },
+    },
+    "subs": Object {
+      "remove": [Function],
+    },
+    "updater": Updater {
+      "_callbacks": Array [],
+      "_renderer": [Circular],
+    },
+  },
+  "_newState": null,
+  "_rendered": <Navigator
+    navigation={
+      Object {
+        "actions": Object {},
+        "addListener": [Function],
+        "dangerouslyGetParent": [Function],
+        "dispatch": [Function],
+        "getChildNavigation": [Function],
+        "getScreenProps": [Function],
+        "goBack": [Function],
+        "isFocused": [Function],
+        "navigate": [Function],
+        "router": Object {
+          "childRouters": Object {
+            "Forms": null,
+            "Other": null,
+            "Settings": null,
+          },
+          "getActionCreators": [Function],
+          "getActionForPathAndParams": [Function],
+          "getComponentForRouteName": [Function],
+          "getComponentForState": [Function],
+          "getPathAndParamsForState": [Function],
+          "getScreenOptions": [Function],
+          "getStateForAction": [Function],
+        },
+        "setParams": [Function],
+        "state": Object {
+          "index": 0,
+          "isTransitioning": false,
+          "routes": Array [
+            Object {
+              "key": "Forms",
+              "params": undefined,
+              "routeName": "Forms",
+            },
+            Object {
+              "key": "Other",
+              "params": undefined,
+              "routeName": "Other",
+            },
+            Object {
+              "key": "Settings",
+              "params": undefined,
+              "routeName": "Settings",
+            },
+          ],
+        },
+      }
+    }
+  />,
+  "_rendering": false,
+  "_updater": Updater {
+    "_callbacks": Array [],
+    "_renderer": [Circular],
+  },
+}
+`;

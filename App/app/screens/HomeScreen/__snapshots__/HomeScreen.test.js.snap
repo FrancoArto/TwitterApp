@@ -1,0 +1,557 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loads without crashing 1`] = `
+<Component
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#fff",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <ActivityIndicator
+    animating={true}
+    color="#999999"
+    hidesWhenStopped={true}
+    size="small"
+  />
+</Component>
+`;
+
+exports[`renders an error message without crashing 1`] = `
+<Component
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <Component
+    style={
+      Object {
+        "flex": 10,
+      }
+    }
+  >
+    <ErrorInApp
+      errorMessage="ERROR"
+    />
+  </Component>
+  <Component
+    style={
+      Object {
+        "flex": 90,
+      }
+    }
+  >
+    <FlatList
+      data={Array []}
+      disableVirtualization={false}
+      horizontal={false}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onEndReachedThreshold={2}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      updateCellsBatchingPeriod={50}
+      windowSize={21}
+    />
+  </Component>
+</Component>
+`;
+
+exports[`renders timeline connected to store 1`] = `
+<HomeScreen
+  data={Array []}
+  error={null}
+  fetchMoreTweets={[Function]}
+  fetchSingleTweetBegin={[Function]}
+  fetchTweetsTimeline={[Function]}
+  fetchUserDataRequest={[Function]}
+  loading={false}
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "clear": [Function],
+        "get": [Function],
+        "notify": [Function],
+        "subscribe": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "@@observable": [Function],
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": [Function],
+    }
+  }
+/>
+`;
+
+exports[`renders timeline without crashing 1`] = `
+<Component
+  style={
+    Object {
+      "flex": 1,
+      "paddingTop": 20,
+    }
+  }
+>
+  <FlatList
+    data={
+      Array [
+        Object {
+          "contributors": null,
+          "coordinates": null,
+          "created_at": "Thu Dec 20 17:26:35 +0000 2018",
+          "entities": Object {
+            "hashtags": Array [],
+            "symbols": Array [],
+            "urls": Array [
+              Object {
+                "display_url": "twitter.com/i/web/status/1…",
+                "expanded_url": "https://twitter.com/i/web/status/1075804669056823301",
+                "indices": Array [
+                  117,
+                  140,
+                ],
+                "url": "https://t.co/Wlbbpw5YCQ",
+              },
+            ],
+            "user_mentions": Array [],
+          },
+          "favorite_count": 0,
+          "favorited": false,
+          "geo": null,
+          "id": 1075804669056823300,
+          "id_str": "1075804669056823301",
+          "in_reply_to_screen_name": null,
+          "in_reply_to_status_id": null,
+          "in_reply_to_status_id_str": null,
+          "in_reply_to_user_id": null,
+          "in_reply_to_user_id_str": null,
+          "is_quote_status": false,
+          "lang": "es",
+          "place": null,
+          "possibly_sensitive": false,
+          "possibly_sensitive_appealable": false,
+          "retweet_count": 0,
+          "retweeted": false,
+          "source": "<a href=\\"http://twitter.com\\" rel=\\"nofollow\\">Twitter Web Client</a>",
+          "text": "Después del viaje de Juan Darthés a Brasil, Sabrina Cartabia (Abogada de Thelma Fardin): \\"Todas las denuncias de vi… https://t.co/Wlbbpw5YCQ",
+          "truncated": true,
+          "user": Object {
+            "contributors_enabled": false,
+            "created_at": "Mon Mar 23 12:35:07 +0000 2009",
+            "default_profile": false,
+            "default_profile_image": false,
+            "description": "Noticias las 24 horas, por el canal líder en audiencia y credibilidad de Argentina",
+            "entities": Object {
+              "description": Object {
+                "urls": Array [],
+              },
+              "url": Object {
+                "urls": Array [
+                  Object {
+                    "display_url": "tn.com.ar",
+                    "expanded_url": "http://www.tn.com.ar",
+                    "indices": Array [
+                      0,
+                      22,
+                    ],
+                    "url": "http://t.co/TX6TF1nOUs",
+                  },
+                ],
+              },
+            },
+            "favourites_count": 1,
+            "follow_request_sent": false,
+            "followers_count": 4677890,
+            "following": true,
+            "friends_count": 124,
+            "geo_enabled": false,
+            "has_extended_profile": false,
+            "id": 25992212,
+            "id_str": "25992212",
+            "is_translation_enabled": true,
+            "is_translator": false,
+            "lang": "es",
+            "listed_count": 9083,
+            "location": "Argentina",
+            "name": "TN - Todo Noticias",
+            "notifications": false,
+            "profile_background_color": "666666",
+            "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+            "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+            "profile_background_tile": true,
+            "profile_banner_url": "https://pbs.twimg.com/profile_banners/25992212/1533675118",
+            "profile_image_url": "http://pbs.twimg.com/profile_images/962300034661396481/OzHK6TZr_normal.jpg",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/962300034661396481/OzHK6TZr_normal.jpg",
+            "profile_link_color": "D51D2E",
+            "profile_sidebar_border_color": "FFFFFF",
+            "profile_sidebar_fill_color": "314BB9",
+            "profile_text_color": "000000",
+            "profile_use_background_image": true,
+            "protected": false,
+            "screen_name": "todonoticias",
+            "statuses_count": 84323,
+            "time_zone": null,
+            "translator_type": "none",
+            "url": "http://t.co/TX6TF1nOUs",
+            "utc_offset": null,
+            "verified": true,
+          },
+        },
+        Object {
+          "contributors": null,
+          "coordinates": null,
+          "created_at": "Thu Dec 20 17:26:21 +0000 2018",
+          "entities": Object {
+            "hashtags": Array [],
+            "symbols": Array [],
+            "urls": Array [
+              Object {
+                "display_url": "bit.ly/2EFC2Hg",
+                "expanded_url": "http://bit.ly/2EFC2Hg",
+                "indices": Array [
+                  86,
+                  109,
+                ],
+                "url": "https://t.co/QYvzBj9SIU",
+              },
+            ],
+            "user_mentions": Array [],
+          },
+          "favorite_count": 1,
+          "favorited": false,
+          "geo": null,
+          "id": 1075804612601569300,
+          "id_str": "1075804612601569281",
+          "in_reply_to_screen_name": null,
+          "in_reply_to_status_id": null,
+          "in_reply_to_status_id_str": null,
+          "in_reply_to_user_id": null,
+          "in_reply_to_user_id_str": null,
+          "is_quote_status": false,
+          "lang": "es",
+          "place": null,
+          "possibly_sensitive": false,
+          "possibly_sensitive_appealable": false,
+          "retweet_count": 0,
+          "retweeted": false,
+          "source": "<a href=\\"https://about.twitter.com/products/tweetdeck\\" rel=\\"nofollow\\">TweetDeck</a>",
+          "text": "La búsqueda de Sofía Herrera: esta es una de las casas allanadas durante el operativo
+https://t.co/QYvzBj9SIU",
+          "truncated": false,
+          "user": Object {
+            "contributors_enabled": false,
+            "created_at": "Mon Mar 23 12:35:07 +0000 2009",
+            "default_profile": false,
+            "default_profile_image": false,
+            "description": "Noticias las 24 horas, por el canal líder en audiencia y credibilidad de Argentina",
+            "entities": Object {
+              "description": Object {
+                "urls": Array [],
+              },
+              "url": Object {
+                "urls": Array [
+                  Object {
+                    "display_url": "tn.com.ar",
+                    "expanded_url": "http://www.tn.com.ar",
+                    "indices": Array [
+                      0,
+                      22,
+                    ],
+                    "url": "http://t.co/TX6TF1nOUs",
+                  },
+                ],
+              },
+            },
+            "favourites_count": 1,
+            "follow_request_sent": false,
+            "followers_count": 4677890,
+            "following": true,
+            "friends_count": 124,
+            "geo_enabled": false,
+            "has_extended_profile": false,
+            "id": 25992212,
+            "id_str": "25992212",
+            "is_translation_enabled": true,
+            "is_translator": false,
+            "lang": "es",
+            "listed_count": 9083,
+            "location": "Argentina",
+            "name": "TN - Todo Noticias",
+            "notifications": false,
+            "profile_background_color": "666666",
+            "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+            "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+            "profile_background_tile": true,
+            "profile_banner_url": "https://pbs.twimg.com/profile_banners/25992212/1533675118",
+            "profile_image_url": "http://pbs.twimg.com/profile_images/962300034661396481/OzHK6TZr_normal.jpg",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/962300034661396481/OzHK6TZr_normal.jpg",
+            "profile_link_color": "D51D2E",
+            "profile_sidebar_border_color": "FFFFFF",
+            "profile_sidebar_fill_color": "314BB9",
+            "profile_text_color": "000000",
+            "profile_use_background_image": true,
+            "protected": false,
+            "screen_name": "todonoticias",
+            "statuses_count": 84323,
+            "time_zone": null,
+            "translator_type": "none",
+            "url": "http://t.co/TX6TF1nOUs",
+            "utc_offset": null,
+            "verified": true,
+          },
+        },
+        Object {
+          "contributors": null,
+          "coordinates": null,
+          "created_at": "Thu Dec 20 17:22:43 +0000 2018",
+          "entities": Object {
+            "hashtags": Array [],
+            "symbols": Array [],
+            "urls": Array [
+              Object {
+                "display_url": "twitter.com/i/web/status/1…",
+                "expanded_url": "https://twitter.com/i/web/status/1075803698432016384",
+                "indices": Array [
+                  117,
+                  140,
+                ],
+                "url": "https://t.co/6oJqb91xdq",
+              },
+            ],
+            "user_mentions": Array [],
+          },
+          "favorite_count": 175,
+          "favorited": false,
+          "geo": null,
+          "id": 1075803698432016400,
+          "id_str": "1075803698432016384",
+          "in_reply_to_screen_name": null,
+          "in_reply_to_status_id": null,
+          "in_reply_to_status_id_str": null,
+          "in_reply_to_user_id": null,
+          "in_reply_to_user_id_str": null,
+          "is_quote_status": false,
+          "lang": "es",
+          "place": null,
+          "possibly_sensitive": false,
+          "possibly_sensitive_appealable": false,
+          "retweet_count": 32,
+          "retweeted": false,
+          "source": "<a href=\\"http://twitter.com\\" rel=\\"nofollow\\">Twitter Web Client</a>",
+          "text": "D'Onofrio reveló un gesto solidario del Pity Martínez: \\"Un día vino a la Fundación y dijo: 'Tomen, esta plata es pa… https://t.co/6oJqb91xdq",
+          "truncated": true,
+          "user": Object {
+            "contributors_enabled": false,
+            "created_at": "Mon Feb 08 20:26:20 +0000 2010",
+            "default_profile": false,
+            "default_profile_image": false,
+            "description": "Diario deportivo | Desde 1996, el primero y único del país | Compartimos la pasión",
+            "entities": Object {
+              "description": Object {
+                "urls": Array [],
+              },
+              "url": Object {
+                "urls": Array [
+                  Object {
+                    "display_url": "Ole.com.ar",
+                    "expanded_url": "http://www.Ole.com.ar",
+                    "indices": Array [
+                      0,
+                      22,
+                    ],
+                    "url": "http://t.co/33Fqv7RRKh",
+                  },
+                ],
+              },
+            },
+            "favourites_count": 617,
+            "follow_request_sent": false,
+            "followers_count": 2576528,
+            "following": true,
+            "friends_count": 156,
+            "geo_enabled": false,
+            "has_extended_profile": false,
+            "id": 112523709,
+            "id_str": "112523709",
+            "is_translation_enabled": false,
+            "is_translator": false,
+            "lang": "es",
+            "listed_count": 6498,
+            "location": "Argentina",
+            "name": "Diario Olé",
+            "notifications": false,
+            "profile_background_color": "000000",
+            "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+            "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+            "profile_background_tile": false,
+            "profile_banner_url": "https://pbs.twimg.com/profile_banners/112523709/1544453053",
+            "profile_image_url": "http://pbs.twimg.com/profile_images/1014198717891653633/J8RZJyum_normal.jpg",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1014198717891653633/J8RZJyum_normal.jpg",
+            "profile_link_color": "669900",
+            "profile_sidebar_border_color": "9AB154",
+            "profile_sidebar_fill_color": "FFFFFF",
+            "profile_text_color": "5E5E5E",
+            "profile_use_background_image": true,
+            "protected": false,
+            "screen_name": "DiarioOle",
+            "statuses_count": 151471,
+            "time_zone": null,
+            "translator_type": "none",
+            "url": "http://t.co/33Fqv7RRKh",
+            "utc_offset": null,
+            "verified": false,
+          },
+        },
+        Object {
+          "contributors": null,
+          "coordinates": null,
+          "created_at": "Thu Dec 20 17:22:02 +0000 2018",
+          "entities": Object {
+            "hashtags": Array [],
+            "symbols": Array [],
+            "urls": Array [
+              Object {
+                "display_url": "lacapitalmdp.com/confirman-proc…",
+                "expanded_url": "https://www.lacapitalmdp.com/confirman-procesamiento-con-prision-preventiva-para-cristina-kirchner-y-de-vido/",
+                "indices": Array [
+                  82,
+                  105,
+                ],
+                "url": "https://t.co/cSqmPjYJ9g",
+              },
+            ],
+            "user_mentions": Array [],
+          },
+          "favorite_count": 1,
+          "favorited": false,
+          "geo": null,
+          "id": 1075803526738206700,
+          "id_str": "1075803526738206721",
+          "in_reply_to_screen_name": null,
+          "in_reply_to_status_id": null,
+          "in_reply_to_status_id_str": null,
+          "in_reply_to_user_id": null,
+          "in_reply_to_user_id_str": null,
+          "is_quote_status": false,
+          "lang": "es",
+          "place": null,
+          "possibly_sensitive": false,
+          "possibly_sensitive_appealable": false,
+          "retweet_count": 0,
+          "retweeted": false,
+          "source": "<a href=\\"http://twitter.com\\" rel=\\"nofollow\\">Twitter Web Client</a>",
+          "text": "Confirman procesamiento con prisión preventiva para Cristina Kirchner y De Vido - https://t.co/cSqmPjYJ9g",
+          "truncated": false,
+          "user": Object {
+            "contributors_enabled": false,
+            "created_at": "Thu Jan 03 22:19:25 +0000 2008",
+            "default_profile": false,
+            "default_profile_image": false,
+            "description": "Diario de Mar del Plata. Edición digital https://t.co/u03KfGdfNC contacto@lacapitalmdq.com.ar",
+            "entities": Object {
+              "description": Object {
+                "urls": Array [
+                  Object {
+                    "display_url": "LACAPITALMDP.COM",
+                    "expanded_url": "http://WWW.LACAPITALMDP.COM",
+                    "indices": Array [
+                      41,
+                      64,
+                    ],
+                    "url": "https://t.co/u03KfGdfNC",
+                  },
+                ],
+              },
+              "url": Object {
+                "urls": Array [
+                  Object {
+                    "display_url": "lacapitalmdp.com",
+                    "expanded_url": "http://www.lacapitalmdp.com",
+                    "indices": Array [
+                      0,
+                      22,
+                    ],
+                    "url": "http://t.co/4292tDBdsg",
+                  },
+                ],
+              },
+            },
+            "favourites_count": 28,
+            "follow_request_sent": false,
+            "followers_count": 77746,
+            "following": true,
+            "friends_count": 381,
+            "geo_enabled": true,
+            "has_extended_profile": false,
+            "id": 11816412,
+            "id_str": "11816412",
+            "is_translation_enabled": false,
+            "is_translator": false,
+            "lang": "es",
+            "listed_count": 384,
+            "location": "Mar del Plata, Argentina",
+            "name": "La Capital de MDP",
+            "notifications": false,
+            "profile_background_color": "DBE9ED",
+            "profile_background_image_url": "http://abs.twimg.com/images/themes/theme17/bg.gif",
+            "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme17/bg.gif",
+            "profile_background_tile": true,
+            "profile_banner_url": "https://pbs.twimg.com/profile_banners/11816412/1455119119",
+            "profile_image_url": "http://pbs.twimg.com/profile_images/697354376910917632/gfgbLNPG_normal.png",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/697354376910917632/gfgbLNPG_normal.png",
+            "profile_link_color": "CC3366",
+            "profile_sidebar_border_color": "000000",
+            "profile_sidebar_fill_color": "E6F6F9",
+            "profile_text_color": "333333",
+            "profile_use_background_image": true,
+            "protected": false,
+            "screen_name": "lacapitalmdq",
+            "statuses_count": 78148,
+            "time_zone": null,
+            "translator_type": "none",
+            "url": "http://t.co/4292tDBdsg",
+            "utc_offset": null,
+            "verified": false,
+          },
+        },
+      ]
+    }
+    disableVirtualization={false}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    numColumns={1}
+    onEndReached={[Function]}
+    onEndReachedThreshold={5}
+    onRefresh={[Function]}
+    refreshing={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    updateCellsBatchingPeriod={50}
+    windowSize={21}
+  />
+</Component>
+`;

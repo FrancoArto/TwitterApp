@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+ReactShallowRenderer {
+  "_context": Object {},
+  "_element": <AppNavigator />,
+  "_forcedUpdate": false,
+  "_instance": AppNavigator {
+    "context": Object {},
+    "props": Object {},
+    "refs": Object {},
+    "state": null,
+    "updater": Updater {
+      "_callbacks": Array [],
+      "_renderer": [Circular],
+    },
+  },
+  "_newState": null,
+  "_rendered": <NavigationContainer />,
+  "_rendering": false,
+  "_updater": Updater {
+    "_callbacks": Array [],
+    "_renderer": [Circular],
+  },
+}
+`;

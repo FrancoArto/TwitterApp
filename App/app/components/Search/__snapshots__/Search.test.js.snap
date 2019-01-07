@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<Component
+  style={
+    Object {
+      "flex": 0.15,
+      "flexDirection": "row",
+    }
+  }
+>
+  <Styled(Content)>
+    <Styled(Item)
+      style={
+        Object {
+          "borderBottomWidth": 0,
+        }
+      }
+    >
+      <Styled(Item)
+        style={
+          Object {
+            "borderBottomWidth": 0.5,
+            "borderColor": "black",
+            "borderLeftWidth": 0.5,
+            "borderRightWidth": 0.5,
+            "borderTopWidth": 0.5,
+            "height": "80%",
+            "marginLeft": 10,
+            "marginTop": 5,
+            "paddingLeft": 5,
+            "width": "70%",
+          }
+        }
+      >
+        <Styled(Icon)
+          active={true}
+          name="search"
+          style={
+            Object {
+              "color": "lightskyblue",
+            }
+          }
+        />
+        <Styled(Input)
+          onChangeText={[Function]}
+        />
+        <Styled(Icon)
+          active={true}
+          name="close"
+          onPress={[Function]}
+          style={
+            Object {
+              "color": "black",
+            }
+          }
+        />
+      </Styled(Item)>
+      <Styled(Item)
+        style={
+          Array [
+            Object {
+              "height": "80%",
+              "justifyContent": "center",
+              "marginTop": 5,
+              "paddingRight": 10,
+              "width": "30%",
+            },
+            Object {
+              "borderBottomWidth": 0,
+            },
+          ]
+        }
+      >
+        <Styled(Button)
+          info={true}
+          onPress={[Function]}
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "white",
+                "marginHorizontal": 20,
+                "textAlign": "center",
+              }
+            }
+          >
+            Search
+          </Text>
+        </Styled(Button)>
+      </Styled(Item)>
+    </Styled(Item)>
+  </Styled(Content)>
+</Component>
+`;
