@@ -13,12 +13,16 @@ const userReducer = (state = userInitialState, action) => {
               }
         }           
         case FETCH_USERDATA_SUCCESS:{
+            let loggedUser = false
+            if (!state.userId) {
+                loggedUser = true
+            }
             return {
                 ...state,
                 loading: false,
                 error: null,
                 userData: action.payload,
-                userId: action.payload.id
+                loggedUser: loggedUser
             }
         }
         case FETCH_USERDATA_FAILURE:{
