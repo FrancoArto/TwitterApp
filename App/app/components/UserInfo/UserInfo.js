@@ -42,7 +42,7 @@ export class UserInfo extends Component {
                     </View>
                     <View style={styles.userNameAndHash}>
                         <Text style={styles.userName}>{ this.props.user.name }</Text>
-                        <Text style={styles.userDispayedName}>@todonoticias</Text>
+                        <Text style={styles.userDispayedName}>@{ this.props.user.screen_name }</Text>
                                            
                     </View>
                 </View>

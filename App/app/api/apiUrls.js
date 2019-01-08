@@ -9,3 +9,4 @@ export const GET_APPENDRESULTS_URL = (searchWord, count, maxId) => SERVER_URL+'/
 export const GET_SINGLETWEET_URL = (twitID) => SERVER_URL + '/show?id=' + twitID;
 export const GET_USERTIMELINE_URL = (userID, count) => SERVER_URL + '/statuses/user_time?id=' + userID + '&' + 'count=' + count;
 export const GET_USERDATA_URL = (userId) => SERVER_URL + '/user?id=' + userId;
+export const GET_CURRENTUSER_URL = () => SERVER_URL + '/current_user';

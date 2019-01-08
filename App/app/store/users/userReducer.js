@@ -18,6 +18,7 @@ const userReducer = (state = userInitialState, action) => {
                 loading: false,
                 error: null,
                 userData: action.payload,
+                userId: action.payload.id
             }
         }
         case FETCH_USERDATA_FAILURE:{
