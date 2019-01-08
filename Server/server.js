@@ -83,7 +83,7 @@ app.get('/user', function (req, res) {
 
 //http://localhost:8080/retweet/?id=12345
 app.post('/retweet', (req,res) => {
-  T.post(`statuses/retweet/`, (err, data , response) => res.json(data))
+  T.post(`statuses/retweet`,req.query, (err, data , response) => res.json(data))
 })
 
 app.listen(8080);
