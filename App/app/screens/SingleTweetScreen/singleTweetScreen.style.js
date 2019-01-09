@@ -29,6 +29,9 @@ export default StyleSheet.create({
         paddingBottom: 0,
         margin: 0
     },
+    retweeted: {
+        color: '#1DA1F2'
+    },
 
     flexUserImg: {
         flex: 1,
