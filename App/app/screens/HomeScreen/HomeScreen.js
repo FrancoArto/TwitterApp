@@ -52,7 +52,8 @@ export class HomeScreen extends Component {
   }
 
   handleOnRetweet (tweetId) {
-    this.props.fetchRetweetBegin(tweetId)
+     this.props.fetchRetweetBegin(tweetId)   
+     setTimeout(()=> {}, 800); 
   }
 
   loadFinish = () => this.setState({ refreshing: false });
