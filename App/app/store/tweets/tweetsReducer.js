@@ -169,7 +169,7 @@ const tweetsReducer = (state = tweetsInitialState, action) => {
     case FETCH_RETWEET_SUCCESS: {
       const tweetsArray = state.data;
       let elem = tweetsArray.findIndex((elem) => elem.id_str === action.payload.retweeted_status.id_str);
-      console.log(elem);
+      console.log(elem)
       tweetsArray[elem]=action.payload.retweeted_status;
       const newArray=tweetsArray.slice();   
 
