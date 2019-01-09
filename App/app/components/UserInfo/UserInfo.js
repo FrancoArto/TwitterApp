@@ -14,7 +14,15 @@ import { Thumbnail, Icon } from 'native-base';
 export class UserInfo extends Component {
     constructor(props) {
         super(props);
+        this.handleProfilePicPress = this.handleProfilePicPress.bind(this)
     }
+
+    handleProfilePicPress() {
+        if (this.props.loggedUser) {
+            this.props.onProfilePicPress()
+        }
+    }
+
     render() {
         let userLink = <View></View>;
         let userLocation = <View></View>;
@@ -38,7 +46,9 @@ export class UserInfo extends Component {
                 </View>
                 <View style={styles.userLogoAndNameContainer}>
                     <View>
-                        <Thumbnail large source={{uri: this.props.user.profile_image_url}} style={styles.userImage} />
+                        <TouchableOpacity onPress={this.handleProfilePicPress}>
+                            <Thumbnail large source={{uri: this.props.user.profile_image_url}} style={styles.userImage} />
+                        </TouchableOpacity>
                     </View>
                     <View style={styles.userNameAndHash}>
                         <Text style={styles.userName}>{ this.props.user.name }</Text>

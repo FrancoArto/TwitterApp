@@ -38,12 +38,17 @@ export class UserProfileScreen extends Component {
 
     this.renderItem = this.renderItem.bind(this);
     this.handleOnTweetPress = this.handleOnTweetPress.bind(this)
+    this.handleOnProfilePicPress = this.handleOnProfilePicPress.bind(this)
   }
 
-
+  handleOnProfilePicPress() {
+    this.props.navigation.navigate('Camera')
+  }
 
   handleTabFocus = () => {
-    this.props.dispatch(fetchUserDataRequest())
+    if (!this.props.loggedUser) {
+      this.props.dispatch(fetchUserDataRequest())
+    }
   }
 
   handleOnTweetPress(event) {
@@ -64,6 +69,8 @@ export class UserProfileScreen extends Component {
           <View style={styles.userData}>
             <UserInfo
               user={this.props.userData}
+              loggedUser={this.props.loggedUser}
+              onProfilePicPress={this.handleOnProfilePicPress}
             />
           </View>
           <View style={styles.tweetsZone}>
@@ -110,6 +117,7 @@ function mapStateToProps(state, props) {
   return {
     userData: state.userReducer.userData,
     loadingInfo: state.userReducer.loading,
+    loggedUser: state.userReducer.loggedUser,
     data: state.tweetsReducer.userTimeline,
     loadingTimeline: state.tweetsReducer.loading,
     error: state.tweetsReducer.error
