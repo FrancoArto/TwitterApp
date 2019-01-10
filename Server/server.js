@@ -94,10 +94,13 @@ app.get('/current_user', function (req, res) {
 
 app.post('/update_profile_picture', function (req, res) { 
   T.post('account/update_profile_image',req.body, function(err, data, response) {
-  console.log(req.body)
   return res.json(data);
   })
 });
+
+app.post('/tweet', (req,res) => {
+  T.post(`statuses/update`,req.body, (err, data , response) => res.json(data))
+})
 
 
 app.listen(8080);
