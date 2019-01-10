@@ -14,7 +14,8 @@ const userInitialState = {
     loading: false,
     error: null,
     userId: null,
-    userData: {}
+    userData: {},
+    loggedUser: false
 }
 
 const trendsInitialState = {

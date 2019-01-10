@@ -14,11 +14,22 @@ import { Thumbnail, Icon } from 'native-base';
 export class UserInfo extends Component {
     constructor(props) {
         super(props);
+        this.handleProfilePicPress = this.handleProfilePicPress.bind(this)
     }
+
+    handleProfilePicPress() {
+        if (this.props.loggedUser) {
+            this.props.onProfilePicPress()
+        }
+    }
+
     render() {
         let userLink = <View></View>;
         let userLocation = <View></View>;
-        let formatDescription = this.props.user.description.replace(/\n|\r/g, "").trim(); ///to delete all spacesJump
+        let formatDescription = ''
+        if (this.props.user.description) {
+            this.props.user.description.replace(/\n|\r/g, "").trim();  ///to delete all spacesJump
+        }
         let unFormatCreationDate = this.props.user.created_at
         let formatCreationDate =unFormatCreationDate.split(" ", unFormatCreationDate.lenght);
         if(this.props.user.url){
@@ -38,11 +49,13 @@ export class UserInfo extends Component {
                 </View>
                 <View style={styles.userLogoAndNameContainer}>
                     <View>
-                        <Thumbnail large source={{uri: this.props.user.profile_image_url}} style={styles.userImage} />
+                        <TouchableOpacity onPress={this.handleProfilePicPress}>
+                            <Thumbnail large source={{uri: this.props.user.profile_image_url}} style={styles.userImage} />
+                        </TouchableOpacity>
                     </View>
                     <View style={styles.userNameAndHash}>
                         <Text style={styles.userName}>{ this.props.user.name }</Text>
-                        <Text style={styles.userDispayedName}>@todonoticias</Text>
+                        <Text style={styles.userDispayedName}>@{ this.props.user.screen_name }</Text>
                                            
                     </View>
                 </View>
