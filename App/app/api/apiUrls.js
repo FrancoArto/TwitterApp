@@ -1,5 +1,5 @@
 
-const SERVER_URL = 'http://10.160.10.174:8080'
+const SERVER_URL = 'http://10.160.10.118:8080'
 
 export const GET_TIMELINE_URL = (count) => SERVER_URL + '/timeline?count=' + count;
 export const GET_APPENDTWEETS_URL = (count, maxId) => SERVER_URL + '/timeline?count=' + count + '&max_id=' + maxId; 
