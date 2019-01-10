@@ -12,6 +12,7 @@ export default class SearchResult extends Component {
     this.handleOnEndReached = this.handleOnEndReached.bind(this);
     this.goToUserProfile = this.goToUserProfile.bind(this)
     this.handleOnTweetPress = this.handleOnTweetPress.bind(this)
+    this.handleOnRetweet = this.handleOnRetweet.bind(this)
   }
 
 
@@ -25,6 +26,10 @@ export default class SearchResult extends Component {
 
   goToUserProfile(event) {
     this.props.goToUserProfile(event);
+  }
+
+  handleOnRetweet(tweetId) {
+    this.props.onRetweet(tweetId);
   }
 
   renderItem({ item, index }) {
@@ -42,6 +47,8 @@ export default class SearchResult extends Component {
         created_at={item.created_at}
         goToUserProfile={this.goToUserProfile}
         onTweetPress={this.handleOnTweetPress}
+        onRetweet={this.handleOnRetweet}
+        retweeted={item.retweeted}
       />
     )
   }

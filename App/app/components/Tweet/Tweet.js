@@ -13,6 +13,7 @@ class Tweet extends PureComponent {
 
         this.goToUserProfile = this.goToUserProfile.bind(this)
         this.handleOnPress = this.handleOnPress.bind(this)
+        this.handleOnRetweet = this.handleOnRetweet.bind(this)
 
     }
 
@@ -26,7 +27,15 @@ class Tweet extends PureComponent {
         this.props.onTweetPress(this.props.id_str)
     }
 
+    handleOnRetweet(){
+        this.props.onRetweet(this.props.id_str)
+    }
+
     render() {
+        let retweetsStyle = [styles.sizeIcons];
+        if(this.props.retweeted){
+            retweetsStyle.push(styles.retweeted);
+        }
 
         return (
             <TouchableOpacity onPress={this.handleOnPress} >
@@ -67,9 +76,9 @@ class Tweet extends PureComponent {
                                 <Text style={[styles.fontNumberIcons]}>{this.props.favorite_count}</Text>
                             </Button>
 
-                            <Button iconLeft transparent primary style={[styles.buttonIcons]}>
-                                <Icon type="SimpleLineIcons" name="refresh" style={[styles.sizeIcons]} />
-                                <Text style={[styles.fontNumberIcons]}>{this.props.retweet_count}</Text>
+                            <Button iconLeft transparent primary style={[styles.buttonIcons]} onPress={this.handleOnRetweet}>
+                                <Icon type="SimpleLineIcons" name="refresh" style={retweetsStyle} />
+                                <Text style={styles.fontNumberIcons}>{this.props.retweet_count}</Text>
                             </Button>
 
                             <Button iconLeft transparent primary style={[styles.buttonIcons]}>

@@ -77,6 +77,9 @@ export default StyleSheet.create({
 
         marginRight: width/45
     },
+    retweeted: {
+        color: '#1DA1F2'
+    },
 
     sizeIcons: {
         marginLeft: 0,

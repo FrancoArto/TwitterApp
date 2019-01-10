@@ -16,7 +16,8 @@ import {
   FETCH_USERTIMELINE_FAILURE,
   FETCH_SINGLETWEET_BEGIN,
   FETCH_SINGLETWEET_SUCCESS,
-  FETCH_SINGLETWEET_FAILURE
+  FETCH_SINGLETWEET_FAILURE,
+  FETCH_RETWEET_SUCCESS
 } from './tweetsActions'
 import { tweetsInitialState } from '../initialState'
 
@@ -163,6 +164,16 @@ const tweetsReducer = (state = tweetsInitialState, action) => {
         error: action.payload,
         singleTweet: {},
         singleTweetId: null
+      }
+    }
+    case FETCH_RETWEET_SUCCESS: {
+    
+     const newArray = state.data.map(element => element.id_str === action.payload.retweeted_status.id_str ? 
+      element = action.payload.retweeted_status : element);
+
+      return {
+        ...state,
+        data: newArray
       }
     }
     default:

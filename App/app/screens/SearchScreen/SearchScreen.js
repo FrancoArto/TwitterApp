@@ -10,7 +10,7 @@ import Search from '../../components/Search/Search';
 import SearchResult from '../../components/SearchResult/SearchResult';
 import TrendList from '../../components/TrendList/TrendList';
 import { fetchTrendsBegin } from '../../store/trends/trendsActions';
-import { fetchSearchBegin, fetchMoreResults, fetchSingleTweetBegin } from '../../store/tweets/tweetsActions';
+import { fetchSearchBegin, fetchMoreResults, fetchSingleTweetBegin, fetchRetweetBegin } from '../../store/tweets/tweetsActions';
 import styles from './searchScreen.style';
 import Fade from '../../components/Fade/Fade';
 
@@ -34,6 +34,7 @@ export class SearchScreen extends Component {
     this.handleClearPress = this.handleClearPress.bind(this);
     this.handleOnChangeText = this.handleOnChangeText.bind(this)
     this.handleFading = this.handleFading.bind(this)
+    this.handleOnRetweet = this.handleOnRetweet.bind(this)
   }
 
 
@@ -86,6 +87,10 @@ export class SearchScreen extends Component {
     })
   }
 
+  handleOnRetweet(tweetId){
+    this.props.fetchRetweetBegin(tweetId)
+  }
+
   render() {
     if (this.props.trends.loading) {
       return (
@@ -109,6 +114,7 @@ export class SearchScreen extends Component {
                 loading={this.props.tweets.loading}
                 data={this.props.tweets.searchResults}
                 onTweetPress={this.handleOnTweetPress}
+                onRetweet={this.handleOnRetweet}
                 />
             </Fade>
           }
@@ -137,7 +143,8 @@ const mapDispatchToProps = {
   fetchSearchBegin: (searchText) => fetchSearchBegin(searchText),
   fetchUserDataRequest: (event) => fetchUserDataRequest(event),
   fetchMoreResults: () => fetchMoreResults(),
-  fetchSingleTweetBegin: (event) => fetchSingleTweetBegin(event)
+  fetchSingleTweetBegin: (event) => fetchSingleTweetBegin(event),
+  fetchRetweetBegin: (tweetId) => fetchRetweetBegin(tweetId)
  }
 //Connect everything
 export default connect(mapStateToProps, mapDispatchToProps)(SearchScreen);

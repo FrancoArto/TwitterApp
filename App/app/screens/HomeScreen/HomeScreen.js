@@ -6,7 +6,7 @@ import {
   ActivityIndicator
 } from 'react-native';
 import { connect } from 'react-redux';
-import { fetchTweetsTimeline, fetchMoreTweets, fetchSingleTweetBegin } from '../../store/tweets/tweetsActions'; //Import your actions
+import { fetchTweetsTimeline, fetchMoreTweets, fetchSingleTweetBegin, fetchRetweetBegin } from '../../store/tweets/tweetsActions'; //Import your actions
 import Tweet from '../../components/Tweet/Tweet'
 import ErrorInApp from '../../components/ErrorInApp/ErrorInApp'
 import styles from './homeScreen.styles';
@@ -25,6 +25,7 @@ export class HomeScreen extends Component {
     this.handleOnEndReached = this.handleOnEndReached.bind(this);
     this.goToUserProfile = this.goToUserProfile.bind(this)
     this.handleOnTweetPress = this.handleOnTweetPress.bind(this)
+    this.handleOnRetweet = this.handleOnRetweet.bind(this)
   }
 
   handleOnTweetPress(event) {
@@ -48,6 +49,11 @@ export class HomeScreen extends Component {
       }
     })
 
+  }
+
+  handleOnRetweet (tweetId) {
+     this.props.fetchRetweetBegin(tweetId)   
+     setTimeout(()=> {}, 800); 
   }
 
   loadFinish = () => this.setState({ refreshing: false });
@@ -114,6 +120,8 @@ export class HomeScreen extends Component {
         media={item.entities.media}
         goToUserProfile={this.goToUserProfile}
         onTweetPress={this.handleOnTweetPress}
+        onRetweet={this.handleOnRetweet}
+        retweeted={item.retweeted}
       />
     )
   }
@@ -137,8 +145,8 @@ const mapDispatchToProps = {
   fetchTweetsTimeline: () => fetchTweetsTimeline(),
   fetchMoreTweets: () => fetchMoreTweets(),
   fetchUserDataRequest: (event) => fetchUserDataRequest(event),
-  fetchSingleTweetBegin: (event) => fetchSingleTweetBegin(event)
-
+  fetchSingleTweetBegin: (event) => fetchSingleTweetBegin(event),
+  fetchRetweetBegin: (tweetId) => fetchRetweetBegin(tweetId)
  }
 
 //Connect everything

@@ -24,6 +24,7 @@ export class SingleTweetScreen extends Component {
     render() {
 
         const { navigation } = this.props;
+        let retweetsStyle = [styles.sizeIcons];
 
         if (this.props.loading) {
             return (
@@ -42,6 +43,10 @@ export class SingleTweetScreen extends Component {
                     />
                 </View>
             }
+            
+        if(this.props.tweet.retweeted){
+            retweetsStyle.push(styles.retweeted);
+        }
 
             return (
                 <View style={[styles.flexTweet]}>
@@ -82,7 +87,7 @@ export class SingleTweetScreen extends Component {
                         </Button>
 
                         <Button iconLeft transparent primary style={[styles.buttonIcons]}>
-                            <Icon type="SimpleLineIcons" name="refresh" style={[styles.sizeIcons]} />
+                            <Icon type="SimpleLineIcons" name="refresh" style={retweetsStyle} />
                             <Text style={[styles.fontNumberIcons]}>{this.props.tweet.retweet_count}</Text>
                         </Button>
 
