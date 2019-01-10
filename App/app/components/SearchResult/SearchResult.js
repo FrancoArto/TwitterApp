@@ -65,7 +65,7 @@ export default class SearchResult extends Component {
           data={this.props.data}
           renderItem={this.renderItem}
           keyExtractor={(item, index) => index.toString()}
-          onEndReachedThreshold={5}
+          onEndReachedThreshold={2}
           onEndReached={this.handleOnEndReached} />
       </View>
     );

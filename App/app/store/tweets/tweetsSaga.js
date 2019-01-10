@@ -102,7 +102,7 @@ function* appendTweets() {
 export function* fetchUserTimeline() {
   try {
     const user = yield select(getUser)
-    const response = yield call(fetch, GET_USERTIMELINE_URL(user, count))
+    const response = yield call(fetch, GET_USERTIMELINE_URL(user.id, count))
     const data = yield call([response, "json"]);
     yield put(fetchUserTimelineSuccess(data))
   } catch (er) {

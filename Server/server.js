@@ -86,4 +86,18 @@ app.post('/retweet', (req,res) => {
   T.post(`statuses/retweet`,req.query, (err, data , response) => res.json(data))
 })
 
+app.get('/current_user', function (req, res) {
+  T.get('/account/verify_credentials',req.query, function(err, data, response) {
+    return res.json(data);
+  })
+});
+
+app.post('/update_profile_picture', function (req, res) { 
+  T.post('account/update_profile_image',req.body, function(err, data, response) {
+  console.log(req.body)
+  return res.json(data);
+  })
+});
+
+
 app.listen(8080);

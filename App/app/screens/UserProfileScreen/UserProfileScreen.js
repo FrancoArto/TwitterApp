@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { UserInfo } from '../../components/UserInfo/UserInfo'
 import {
+  Text,
   View,
   ActivityIndicator,
   FlatList,
@@ -11,23 +12,49 @@ import { connect } from 'react-redux';
 import Tweet from '../../components/Tweet/Tweet'
 import { styles } from './userProfileScreen.style'
 import PropTypes from 'prop-types';
-import {fetchSingleTweetBegin} from '../../store/tweets/tweetsActions'
+import { fetchSingleTweetBegin } from '../../store/tweets/tweetsActions'
+import { fetchUserDataRequest } from '../../store/users/userActions';
 
 
 export class UserProfileScreen extends Component {
+
+  static navigationOptions = () => {
+    return {
+      tabBarOnPress({ navigation, defaultHandler }) {
+        if (!navigation.isFocused()) {
+          navigation.state.params.onTabFocus();
+          defaultHandler();
+        }
+      }
+    };
+  };
+
   constructor(props) {
     super(props);
 
+    this.props.navigation.setParams({
+      onTabFocus: this.handleTabFocus
+    });
+
     this.renderItem = this.renderItem.bind(this);
     this.handleOnTweetPress = this.handleOnTweetPress.bind(this)
+    this.handleOnProfilePicPress = this.handleOnProfilePicPress.bind(this)
+  }
+
+  handleOnProfilePicPress() {
+    this.props.navigation.navigate('Camera')
+  }
+
+  handleTabFocus = () => {
+    if (!this.props.loggedUser) {
+      this.props.dispatch(fetchUserDataRequest())
+    }
   }
 
   handleOnTweetPress(event) {
-    this.props.fetchSingleTweetBegin(event)
+    this.props.dispatch(fetchSingleTweetBegin(event))
     this.props.navigation.navigate('SingleTweet')
   }
-
-  
 
   render() {
     if ((this.props.loadingInfo) || (this.props.loadingTimeline)) {
@@ -36,12 +63,14 @@ export class UserProfileScreen extends Component {
           <ActivityIndicator animating={true} />
         </View>
       )
-    } else {
+    } else if (Object.getOwnPropertyNames(this.props.userData).length > 0) {
       return (
         <ScrollView style={styles.mainContainer}>
           <View style={styles.userData}>
             <UserInfo
               user={this.props.userData}
+              loggedUser={this.props.loggedUser}
+              onProfilePicPress={this.handleOnProfilePicPress}
             />
           </View>
           <View style={styles.tweetsZone}>
@@ -53,6 +82,12 @@ export class UserProfileScreen extends Component {
             />
           </View>
         </ScrollView>
+      )
+    } else {
+      return (
+        <View style={styles.mainContainer}>
+          <Text>Nothing to show</Text>
+        </View>
       )
     }
 
@@ -82,6 +117,7 @@ function mapStateToProps(state, props) {
   return {
     userData: state.userReducer.userData,
     loadingInfo: state.userReducer.loading,
+    loggedUser: state.userReducer.loggedUser,
     data: state.tweetsReducer.userTimeline,
     loadingTimeline: state.tweetsReducer.loading,
     error: state.tweetsReducer.error
@@ -90,7 +126,7 @@ function mapStateToProps(state, props) {
 
 function mapDispatchToProps() {
   return {
-    fetchSingleTweetBegin: (event) => fetchSingleTweetBegin(event)
+    fetchSingleTweetBegin: (event) => fetchSingleTweetBegin(event),
   }
 }
 
@@ -102,7 +138,7 @@ UserProfileScreen.propTypes = {
 
 
 //Connect everything
-export default connect(mapStateToProps, mapDispatchToProps)(UserProfileScreen);
+export default connect(mapStateToProps)(UserProfileScreen);
 
 
 
