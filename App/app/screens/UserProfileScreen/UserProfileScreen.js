@@ -11,9 +11,9 @@ import {
 import { connect } from 'react-redux';
 import Tweet from '../../components/Tweet/Tweet'
 import { styles } from './userProfileScreen.style'
-import PropTypes from 'prop-types';
 import { fetchSingleTweetBegin } from '../../store/tweets/tweetsActions'
 import { fetchUserDataRequest } from '../../store/users/userActions';
+import NewTweetButton from '../../components/NewTweetButton/NewTweetButton';
 
 
 export class UserProfileScreen extends Component {
@@ -39,6 +39,11 @@ export class UserProfileScreen extends Component {
     this.renderItem = this.renderItem.bind(this);
     this.handleOnTweetPress = this.handleOnTweetPress.bind(this)
     this.handleOnProfilePicPress = this.handleOnProfilePicPress.bind(this)
+    this.handleNewTweetPress = this.handleNewTweetPress.bind(this)
+  }
+
+  handleNewTweetPress() {
+
   }
 
   handleOnProfilePicPress() {
@@ -65,28 +70,32 @@ export class UserProfileScreen extends Component {
       )
     } else if (Object.getOwnPropertyNames(this.props.userData).length > 0) {
       return (
-        <ScrollView style={styles.mainContainer}>
-          <View style={styles.userData}>
-            <UserInfo
-              user={this.props.userData}
-              loggedUser={this.props.loggedUser}
-              onProfilePicPress={this.handleOnProfilePicPress}
-            />
-          </View>
-          <View style={styles.tweetsZone}>
-            <FlatList
-              ref='listRef'
-              data={this.props.data}
-              renderItem={this.renderItem}
-              keyExtractor={(item) => item.id.toString()}
-            />
-          </View>
-        </ScrollView>
+        <View style={styles.mainContainer}>
+          <ScrollView style={styles.mainContainer}>
+            <View style={styles.userData}>
+              <UserInfo
+                user={this.props.userData}
+                loggedUser={this.props.loggedUser}
+                onProfilePicPress={this.handleOnProfilePicPress}
+              />
+            </View>
+            <View style={styles.tweetsZone}>
+              <FlatList
+                ref='listRef'
+                data={this.props.data}
+                renderItem={this.renderItem}
+                keyExtractor={(item) => item.id.toString()}
+              />
+            </View>
+          </ScrollView>
+          <NewTweetButton onPress={this.handleNewTweetPress} />
+        </View>
       )
     } else {
       return (
         <View style={styles.mainContainer}>
           <Text>Nothing to show</Text>
+          <NewTweetButton onPress={this.handleNewTweetPress} />
         </View>
       )
     }
@@ -131,10 +140,7 @@ function mapDispatchToProps() {
 }
 
 
-/*
-UserProfileScreen.propTypes = {
-  navigation: PropTypes.object.isRequired,
-};*/
+
 
 
 //Connect everything
