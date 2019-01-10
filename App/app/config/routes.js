@@ -3,7 +3,7 @@ import SearchScreen from '../screens/SearchScreen/SearchScreen'
 import TabNavigator from '../components/TabNavigator/TabNavigator'
 import UserProfileScreen from '../screens/UserProfileScreen/UserProfileScreen'
 import SingleTweetScreen from '../screens/SingleTweetScreen/SingleTweetScreen';
-import { CameraScreen } from '../screens/CameraScreen/CameraScreen';
+import CameraScreen from '../screens/CameraScreen/CameraScreen';
 
 const Routes ={
     TabNavigator: { 

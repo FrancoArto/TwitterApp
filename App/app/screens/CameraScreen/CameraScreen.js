@@ -9,6 +9,9 @@ import {
 import { RNCamera } from 'react-native-camera';
 import { styles } from './cameraScreen.styles'
 import Icon from 'react-native-vector-icons/Feather'
+import { uploadProfilePictureRequest } from '../../store/users/userActions';
+import { connect } from 'react-redux';
+
 
 export class CameraScreen extends Component {
 
@@ -48,7 +51,8 @@ export class CameraScreen extends Component {
   }
 
   uploadPicture() {
-
+    this.props.uploadProfilePictureRequest(this.state.image)
+    this.props.navigation.goBack()
   }
 
   toggleCamera() {
@@ -124,7 +128,7 @@ export class CameraScreen extends Component {
 
   takePicture = async function () {
     if (this.camera) {
-      const options = {base64: true, fixOrientation: true}
+      const options = {base64: true, fixOrientation: true, quality: 0.01}
       this.camera.takePictureAsync(options)
         .then((image) => {
           console.log(image)
@@ -136,5 +140,16 @@ export class CameraScreen extends Component {
     }
   };
 }
+
+function mapStateToProps () {
+  return {}
+}
+
+const mapDispatchToProps = {
+  uploadProfilePictureRequest: (data) => uploadProfilePictureRequest(data)
+ }
+
+//Connect everything
+export default connect(mapStateToProps, mapDispatchToProps)(CameraScreen);
 
 

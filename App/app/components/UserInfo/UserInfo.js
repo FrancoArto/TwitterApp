@@ -26,7 +26,10 @@ export class UserInfo extends Component {
     render() {
         let userLink = <View></View>;
         let userLocation = <View></View>;
-        let formatDescription = this.props.user.description.replace(/\n|\r/g, "").trim(); ///to delete all spacesJump
+        let formatDescription = ''
+        if (this.props.user.description) {
+            this.props.user.description.replace(/\n|\r/g, "").trim();  ///to delete all spacesJump
+        }
         let unFormatCreationDate = this.props.user.created_at
         let formatCreationDate =unFormatCreationDate.split(" ", unFormatCreationDate.lenght);
         if(this.props.user.url){
