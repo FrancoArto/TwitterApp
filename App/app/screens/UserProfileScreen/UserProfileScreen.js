@@ -11,9 +11,12 @@ import {
 import { connect } from 'react-redux';
 import Tweet from '../../components/Tweet/Tweet'
 import { styles } from './userProfileScreen.style'
-import { fetchSingleTweetBegin } from '../../store/tweets/tweetsActions'
+import { fetchSingleTweetBegin, postTweetBegin } from '../../store/tweets/tweetsActions'
 import { fetchUserDataRequest } from '../../store/users/userActions';
 import NewTweetButton from '../../components/NewTweetButton/NewTweetButton';
+import { NewTweet } from '../../components/NewTweet/NewTweet';
+
+
 
 
 export class UserProfileScreen extends Component {
@@ -36,14 +39,30 @@ export class UserProfileScreen extends Component {
       onTabFocus: this.handleTabFocus
     });
 
+    this.state = {
+      modalVisible: false
+    }
+
     this.renderItem = this.renderItem.bind(this);
     this.handleOnTweetPress = this.handleOnTweetPress.bind(this)
     this.handleOnProfilePicPress = this.handleOnProfilePicPress.bind(this)
     this.handleNewTweetPress = this.handleNewTweetPress.bind(this)
+    this.handleHideModal = this.handleHideModal.bind(this)
+    this.handleTweetSend = this.handleTweetSend.bind(this)
   }
 
-  handleNewTweetPress() {
+  
 
+  handleNewTweetPress() {
+    this.setState({
+      modalVisible: true
+    })
+  }
+
+  handleHideModal() {
+    this.setState({
+      modalVisible: false
+    })
   }
 
   handleOnProfilePicPress() {
@@ -59,6 +78,10 @@ export class UserProfileScreen extends Component {
   handleOnTweetPress(event) {
     this.props.dispatch(fetchSingleTweetBegin(event))
     this.props.navigation.navigate('SingleTweet')
+  }
+
+  handleTweetSend(value) {
+    this.props.dispatch(postTweetBegin(value))
   }
 
   render() {
@@ -89,6 +112,9 @@ export class UserProfileScreen extends Component {
             </View>
           </ScrollView>
           <NewTweetButton onPress={this.handleNewTweetPress} />
+          <NewTweet modalVisible={this.state.modalVisible}
+            hideModal={this.handleHideModal} 
+            onTweetSend={this.handleTweetSend} />
         </View>
       )
     } else {
@@ -96,6 +122,9 @@ export class UserProfileScreen extends Component {
         <View style={styles.mainContainer}>
           <Text>Nothing to show</Text>
           <NewTweetButton onPress={this.handleNewTweetPress} />
+          <NewTweet modalVisible={this.state.modalVisible}
+            hideModal={this.handleHideModal} 
+            onTweetSend={this.handleTweetSend} />
         </View>
       )
     }
@@ -136,6 +165,7 @@ function mapStateToProps(state, props) {
 function mapDispatchToProps() {
   return {
     fetchSingleTweetBegin: (event) => fetchSingleTweetBegin(event),
+    
   }
 }
 

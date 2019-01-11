@@ -9,10 +9,12 @@ import Search from '../../components/Search/Search';
 import SearchResult from '../../components/SearchResult/SearchResult';
 import TrendList from '../../components/TrendList/TrendList';
 import { fetchTrendsBegin } from '../../store/trends/trendsActions';
-import { fetchSearchBegin, fetchMoreResults, fetchSingleTweetBegin, fetchRetweetBegin } from '../../store/tweets/tweetsActions';
+import { fetchSearchBegin, fetchMoreResults, fetchSingleTweetBegin, fetchRetweetBegin, postTweetBegin } from '../../store/tweets/tweetsActions';
 import styles from './searchScreen.style';
 import Fade from '../../components/Fade/Fade';
 import NewTweetButton from '../../components/NewTweetButton/NewTweetButton';
+import { NewTweet } from '../../components/NewTweet/NewTweet';
+
 
 
 export class SearchScreen extends Component {
@@ -21,7 +23,9 @@ export class SearchScreen extends Component {
 
     this.state = {
       searching: false,
-      searchText: ''
+      searchText: '',
+      modalVisible: false
+
     };
 
     this.searchDispatched = false
@@ -36,6 +40,8 @@ export class SearchScreen extends Component {
     this.handleFading = this.handleFading.bind(this)
     this.handleOnRetweet = this.handleOnRetweet.bind(this)
     this.handleNewTweetPress = this.handleNewTweetPress.bind(this)
+    this.handleHideModal = this.handleHideModal.bind(this)
+    this.handleTweetSend = this.handleTweetSend.bind(this)
   }
 
 
@@ -88,12 +94,25 @@ export class SearchScreen extends Component {
     })
   }
 
+  handleNewTweetPress() {
+    this.setState({
+      modalVisible: true
+    })
+  }
+
+  handleHideModal() {
+    this.setState({
+      modalVisible: false
+    })
+  }
+
   handleOnRetweet(tweetId) {
     this.props.fetchRetweetBegin(tweetId)
   }
 
-  handleNewTweetPress() {
 
+  handleTweetSend(value) {
+    this.props.postTweetBegin(value)
   }
 
   render() {
@@ -131,6 +150,9 @@ export class SearchScreen extends Component {
             }
           </ScrollView>
           <NewTweetButton onPress={this.handleNewTweetPress} />
+          <NewTweet modalVisible={this.state.modalVisible}
+            hideModal={this.handleHideModal} 
+            onTweetSend={this.handleTweetSend} />
         </View>
       );
     }
@@ -152,7 +174,9 @@ const mapDispatchToProps = {
   fetchUserDataRequest: (event) => fetchUserDataRequest(event),
   fetchMoreResults: () => fetchMoreResults(),
   fetchSingleTweetBegin: (event) => fetchSingleTweetBegin(event),
-  fetchRetweetBegin: (tweetId) => fetchRetweetBegin(tweetId)
+  fetchRetweetBegin: (tweetId) => fetchRetweetBegin(tweetId),
+  postTweetBegin: (value) => postTweetBegin(value)
+
 }
 //Connect everything
 export default connect(mapStateToProps, mapDispatchToProps)(SearchScreen);

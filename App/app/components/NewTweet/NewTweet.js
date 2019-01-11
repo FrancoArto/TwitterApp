@@ -29,6 +29,9 @@ export class NewTweet extends Component {
 
   handleTweetSend() {
     this.props.onTweetSend(this.state.inputText)
+    this.setState({
+      inputText: ''
+    })
     this.setModalInvisible()
   } 
 
