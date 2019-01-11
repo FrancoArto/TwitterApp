@@ -5,6 +5,7 @@ import HomeScreen from '../../screens/HomeScreen/HomeScreen'
 import SearchScreen from '../../screens/SearchScreen/SearchScreen';
 import SettingsScreen from '../../screens/SettingsScreen/SettingsScreen';
 import ReduxUserProfileScreen from '../../screens/UserProfileScreen/UserProfileScreen';
+import NotificationScreen from '../../screens/NotificationScreen/NotificationScreen';
 
 export default createMaterialTopTabNavigator({
   Forms: {
@@ -38,6 +39,14 @@ export default createMaterialTopTabNavigator({
     navigationOptions: {
       tabBarIcon: ({ tintColor }) => (
         <Icon name="user" color={tintColor} size={24} />
+      ),
+    }
+  },
+  Notification: {
+    screen: NotificationScreen,
+    navigationOptions: {
+      tabBarIcon: ({ tintColor }) => (
+        <Icon name="bell" color={tintColor} size={24} />
       ),
     }
   }
