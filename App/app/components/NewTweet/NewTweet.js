@@ -14,6 +14,7 @@ export class NewTweet extends Component {
     }
 
     this.onChangeText = this.onChangeText.bind(this)
+    this.handleTweetSend = this.handleTweetSend.bind(this)
   }
 
   setModalInvisible() {
@@ -25,6 +26,11 @@ export class NewTweet extends Component {
       inputText: value
     })
   }
+
+  handleTweetSend() {
+    this.props.onTweetSend(this.state.inputText)
+    this.setModalInvisible()
+  } 
 
   render() {
     return (
@@ -52,7 +58,7 @@ export class NewTweet extends Component {
             style={styles.textInput}
             placeholder={'What\'s happening?'}
           ></TextInput>
-          <Button style={styles.sendButton}>
+          <Button style={styles.sendButton} onPress={this.handleTweetSend}>
             <Text style={styles.buttonText}>Send</Text>
           </Button>
         </View>

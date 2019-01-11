@@ -5,7 +5,7 @@ import {
   ActivityIndicator
 } from 'react-native';
 import { connect } from 'react-redux';
-import { fetchTweetsTimeline, fetchMoreTweets, fetchSingleTweetBegin, fetchRetweetBegin } from '../../store/tweets/tweetsActions'; //Import your actions
+import { fetchTweetsTimeline, fetchMoreTweets, fetchSingleTweetBegin, fetchRetweetBegin, postTweetBegin } from '../../store/tweets/tweetsActions'; //Import your actions
 import Tweet from '../../components/Tweet/Tweet'
 import ErrorInApp from '../../components/ErrorInApp/ErrorInApp'
 import styles from './homeScreen.styles';
@@ -30,6 +30,7 @@ export class HomeScreen extends Component {
     this.handleOnRetweet = this.handleOnRetweet.bind(this)
     this.handleNewTweetPress = this.handleNewTweetPress.bind(this)
     this.handleHideModal = this.handleHideModal.bind(this)
+    this.handleTweetSend = this.handleTweetSend.bind(this)
   }
 
   handleOnTweetPress(event) {
@@ -79,6 +80,10 @@ export class HomeScreen extends Component {
     this.props.navigation.navigate('UserProfile')
   }
 
+  handleTweetSend(value) {
+    this.props.postTweetBegin(value)
+  }
+
   render() {
     if (this.props.loading && !this.state.refreshing) {
       return (
@@ -100,7 +105,9 @@ export class HomeScreen extends Component {
             onEndReached={this.handleOnEndReached}
           />
           <NewTweetButton onPress={this.handleNewTweetPress} />
-          <NewTweet modalVisible={this.state.modalVisible} hideModal={this.handleHideModal} />
+          <NewTweet modalVisible={this.state.modalVisible}
+            hideModal={this.handleHideModal} 
+            onTweetSend={this.handleTweetSend} />
         </View>
       );
     } else {
@@ -164,7 +171,8 @@ const mapDispatchToProps = {
   fetchMoreTweets: () => fetchMoreTweets(),
   fetchUserDataRequest: (event) => fetchUserDataRequest(event),
   fetchSingleTweetBegin: (event) => fetchSingleTweetBegin(event),
-  fetchRetweetBegin: (tweetId) => fetchRetweetBegin(tweetId)
+  fetchRetweetBegin: (tweetId) => fetchRetweetBegin(tweetId),
+  postTweetBegin: (value) => postTweetBegin(value)
 }
 
 //Connect everything
