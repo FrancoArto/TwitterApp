@@ -12,4 +12,5 @@ export const GET_USERDATA_URL = (userId) => SERVER_URL + '/user?id=' + userId;
 export const GET_RETWEET_URL = (twitId) => SERVER_URL + `/retweet/?id=${twitId}`;
 export const GET_CURRENTUSER_URL = () => SERVER_URL + '/current_user';
 export const UPLOAD_PROFILE_PICTURE_URL = () => SERVER_URL + '/update_profile_picture'
+export const POST_TWEET_URL = () => SERVER_URL + '/tweet'
 

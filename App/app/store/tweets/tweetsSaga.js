@@ -1,4 +1,4 @@
-import { GET_SEARCHTWEETS_URL, GET_APPENDRESULTS_URL, GET_TIMELINE_URL, GET_APPENDTWEETS_URL, GET_USERTIMELINE_URL, GET_SINGLETWEET_URL, GET_RETWEET_URL } from '../../api/apiUrls';
+import { GET_SEARCHTWEETS_URL, GET_APPENDRESULTS_URL, GET_TIMELINE_URL, GET_APPENDTWEETS_URL, GET_USERTIMELINE_URL, GET_SINGLETWEET_URL, GET_RETWEET_URL, POST_TWEET_URL } from '../../api/apiUrls';
 import { takeLatest, put, call, select, all } from 'redux-saga/effects';
 import { FETCH_SEARCH_BEGIN, 
   fetchSearchSuccess, 
@@ -24,7 +24,10 @@ import { FETCH_SEARCH_BEGIN,
   FETCH_RETWEET_SUCCESS,
   fetchRetweetSuccess,
   FETCH_RETWEET_FAILURE,
-  fetchRetweetError
+  fetchRetweetError,
+  POST_TWEET_BEGIN,
+  postTweetSuccess,
+  postTweetFailure
 } from './tweetsActions';
 import { getMaxId, getSearchText, getSingleTweetId } from './tweetsSelector';
 import { FETCH_USERDATA_SUCCESS } from '../users/userActions';
@@ -155,6 +158,30 @@ export function* retweet() {
   yield takeLatest(FETCH_RETWEET_BEGIN, fetchRetweet);
 }
 
+export function* sendTweetToEndpoint(action) {
+
+  try{
+    const response = yield call(fetch, POST_TWEET_URL(), {
+      method: 'POST',
+      headers: new Headers({
+        'Content-type': 'application/json'
+      }),
+      body: JSON.stringify({status: action.payload})
+    });
+    console.log(response)
+    const data = yield call([response, "json"]);
+    
+    yield put(postTweetSuccess(data))
+  }catch(er) {
+    console.log(er)
+    yield put(postTweetFailure(er))
+  }
+}
+
+export function* postTweet() {
+  yield takeLatest(POST_TWEET_BEGIN, sendTweetToEndpoint)
+}
+
 
 export function* tweetsSaga() {
   yield all([
@@ -165,6 +192,7 @@ export function* tweetsSaga() {
     userDataSucceeded(),
     userTimeline(),
     singleTweet(),
-    retweet()
+    retweet(),
+    postTweet()
   ])
 }

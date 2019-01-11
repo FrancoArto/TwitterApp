@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import {
   ScrollView,
@@ -10,9 +9,12 @@ import Search from '../../components/Search/Search';
 import SearchResult from '../../components/SearchResult/SearchResult';
 import TrendList from '../../components/TrendList/TrendList';
 import { fetchTrendsBegin } from '../../store/trends/trendsActions';
-import { fetchSearchBegin, fetchMoreResults, fetchSingleTweetBegin, fetchRetweetBegin } from '../../store/tweets/tweetsActions';
+import { fetchSearchBegin, fetchMoreResults, fetchSingleTweetBegin, fetchRetweetBegin, postTweetBegin } from '../../store/tweets/tweetsActions';
 import styles from './searchScreen.style';
 import Fade from '../../components/Fade/Fade';
+import NewTweetButton from '../../components/NewTweetButton/NewTweetButton';
+import { NewTweet } from '../../components/NewTweet/NewTweet';
+
 
 
 export class SearchScreen extends Component {
@@ -21,7 +23,9 @@ export class SearchScreen extends Component {
 
     this.state = {
       searching: false,
-      searchText: ''
+      searchText: '',
+      modalVisible: false
+
     };
 
     this.searchDispatched = false
@@ -35,6 +39,9 @@ export class SearchScreen extends Component {
     this.handleOnChangeText = this.handleOnChangeText.bind(this)
     this.handleFading = this.handleFading.bind(this)
     this.handleOnRetweet = this.handleOnRetweet.bind(this)
+    this.handleNewTweetPress = this.handleNewTweetPress.bind(this)
+    this.handleHideModal = this.handleHideModal.bind(this)
+    this.handleTweetSend = this.handleTweetSend.bind(this)
   }
 
 
@@ -43,7 +50,7 @@ export class SearchScreen extends Component {
     this.props.navigation.navigate('SingleTweet')
   }
 
-  
+
 
   handleOnEndReached() {
     this.props.fetchMoreResults();
@@ -87,8 +94,25 @@ export class SearchScreen extends Component {
     })
   }
 
-  handleOnRetweet(tweetId){
+  handleNewTweetPress() {
+    this.setState({
+      modalVisible: true
+    })
+  }
+
+  handleHideModal() {
+    this.setState({
+      modalVisible: false
+    })
+  }
+
+  handleOnRetweet(tweetId) {
     this.props.fetchRetweetBegin(tweetId)
+  }
+
+
+  handleTweetSend(value) {
+    this.props.postTweetBegin(value)
   }
 
   render() {
@@ -100,30 +124,36 @@ export class SearchScreen extends Component {
       );
     } else {
       return (
-        <ScrollView style={styles.container}>
-          <Search onSearch={this.onSearch}
-            searchText={this.state.searchText}
-            onChangeText={this.handleOnChangeText}
-            onClearPress={this.handleClearPress} />
-          {this.state.searching  &&
-            <Fade fading={this.handleFading} visible={this.searchDispatched && !this.props.tweets.loading} style={styles.container}>
-              <SearchResult goToUserProfile={this.goToUserProfile}
-                handleOnEndReached={this.handleOnEndReached}
-                navigationProp={this.props.navigation}
-                searchText={this.state.searchText}
-                loading={this.props.tweets.loading}
-                data={this.props.tweets.searchResults}
-                onTweetPress={this.handleOnTweetPress}
-                onRetweet={this.handleOnRetweet}
+        <View style={styles.container}>
+          <ScrollView style={styles.container}>
+            <Search onSearch={this.onSearch}
+              searchText={this.state.searchText}
+              onChangeText={this.handleOnChangeText}
+              onClearPress={this.handleClearPress} />
+            {this.state.searching &&
+              <Fade fading={this.handleFading} visible={this.searchDispatched && !this.props.tweets.loading} style={styles.container}>
+                <SearchResult goToUserProfile={this.goToUserProfile}
+                  handleOnEndReached={this.handleOnEndReached}
+                  navigationProp={this.props.navigation}
+                  searchText={this.state.searchText}
+                  loading={this.props.tweets.loading}
+                  data={this.props.tweets.searchResults}
+                  onTweetPress={this.handleOnTweetPress}
+                  onRetweet={this.handleOnRetweet}
                 />
-            </Fade>
-          }
-          {!this.state.searching &&
-            <Fade fading={this.handleFading} visible={!this.searchDispatched} style={styles.container}>
-              <TrendList handleOnTrendPress={this.handleOnTrendPress} data={this.props.trends.data} />
-            </Fade>
-          }
-        </ScrollView>
+              </Fade>
+            }
+            {!this.state.searching &&
+              <Fade fading={this.handleFading} visible={!this.searchDispatched} style={styles.container}>
+                <TrendList handleOnTrendPress={this.handleOnTrendPress} data={this.props.trends.data} />
+              </Fade>
+            }
+          </ScrollView>
+          <NewTweetButton onPress={this.handleNewTweetPress} />
+          <NewTweet modalVisible={this.state.modalVisible}
+            hideModal={this.handleHideModal} 
+            onTweetSend={this.handleTweetSend} />
+        </View>
       );
     }
   }
@@ -144,16 +174,14 @@ const mapDispatchToProps = {
   fetchUserDataRequest: (event) => fetchUserDataRequest(event),
   fetchMoreResults: () => fetchMoreResults(),
   fetchSingleTweetBegin: (event) => fetchSingleTweetBegin(event),
-  fetchRetweetBegin: (tweetId) => fetchRetweetBegin(tweetId)
- }
+  fetchRetweetBegin: (tweetId) => fetchRetweetBegin(tweetId),
+  postTweetBegin: (value) => postTweetBegin(value)
+
+}
 //Connect everything
 export default connect(mapStateToProps, mapDispatchToProps)(SearchScreen);
 
-/*
-SearchScreen.propTypes = {
-  navigation: PropTypes.object.isRequired,
-};
-*/
+
 
 SearchScreen.navigationOptions = {
   title: 'Search',

@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import {
   FlatList,
@@ -6,19 +5,22 @@ import {
   ActivityIndicator
 } from 'react-native';
 import { connect } from 'react-redux';
-import { fetchTweetsTimeline, fetchMoreTweets, fetchSingleTweetBegin, fetchRetweetBegin } from '../../store/tweets/tweetsActions'; //Import your actions
+import { fetchTweetsTimeline, fetchMoreTweets, fetchSingleTweetBegin, fetchRetweetBegin, postTweetBegin } from '../../store/tweets/tweetsActions'; //Import your actions
 import Tweet from '../../components/Tweet/Tweet'
 import ErrorInApp from '../../components/ErrorInApp/ErrorInApp'
 import styles from './homeScreen.styles';
 import { getFilteredTweets } from '../../store/tweets/tweetsSelector';
 import { fetchUserDataRequest } from '../../store/users/userActions';
+import NewTweetButton from '../../components/NewTweetButton/NewTweetButton';
+import { NewTweet } from '../../components/NewTweet/NewTweet';
 
 export class HomeScreen extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      refreshing: false
+      refreshing: false,
+      modalVisible: false
     };
 
     this.renderItem = this.renderItem.bind(this);
@@ -26,6 +28,9 @@ export class HomeScreen extends Component {
     this.goToUserProfile = this.goToUserProfile.bind(this)
     this.handleOnTweetPress = this.handleOnTweetPress.bind(this)
     this.handleOnRetweet = this.handleOnRetweet.bind(this)
+    this.handleNewTweetPress = this.handleNewTweetPress.bind(this)
+    this.handleHideModal = this.handleHideModal.bind(this)
+    this.handleTweetSend = this.handleTweetSend.bind(this)
   }
 
   handleOnTweetPress(event) {
@@ -51,9 +56,21 @@ export class HomeScreen extends Component {
 
   }
 
-  handleOnRetweet (tweetId) {
-     this.props.fetchRetweetBegin(tweetId)   
-     setTimeout(()=> {}, 800); 
+  handleNewTweetPress() {
+    this.setState({
+      modalVisible: true
+    })
+  }
+
+  handleHideModal() {
+    this.setState({
+      modalVisible: false
+    })
+  }
+
+  handleOnRetweet(tweetId) {
+    this.props.fetchRetweetBegin(tweetId)
+    setTimeout(() => { }, 800);
   }
 
   loadFinish = () => this.setState({ refreshing: false });
@@ -61,6 +78,10 @@ export class HomeScreen extends Component {
   goToUserProfile(event) {
     this.props.fetchUserDataRequest(event)
     this.props.navigation.navigate('UserProfile')
+  }
+
+  handleTweetSend(value) {
+    this.props.postTweetBegin(value)
   }
 
   render() {
@@ -83,6 +104,10 @@ export class HomeScreen extends Component {
             onEndReachedThreshold={5}
             onEndReached={this.handleOnEndReached}
           />
+          <NewTweetButton onPress={this.handleNewTweetPress} />
+          <NewTweet modalVisible={this.state.modalVisible}
+            hideModal={this.handleHideModal} 
+            onTweetSend={this.handleTweetSend} />
         </View>
       );
     } else {
@@ -146,18 +171,15 @@ const mapDispatchToProps = {
   fetchMoreTweets: () => fetchMoreTweets(),
   fetchUserDataRequest: (event) => fetchUserDataRequest(event),
   fetchSingleTweetBegin: (event) => fetchSingleTweetBegin(event),
-  fetchRetweetBegin: (tweetId) => fetchRetweetBegin(tweetId)
- }
+  fetchRetweetBegin: (tweetId) => fetchRetweetBegin(tweetId),
+  postTweetBegin: (value) => postTweetBegin(value)
+}
 
 //Connect everything
 export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);
 
 
-/*
-HomeScreen.propTypes = {
-  navigation: PropTypes.object.isRequired,
-};
-*/
+
 
 HomeScreen.navigationOptions = {
   title: 'Home',

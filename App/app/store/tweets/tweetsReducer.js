@@ -17,9 +17,13 @@ import {
   FETCH_SINGLETWEET_BEGIN,
   FETCH_SINGLETWEET_SUCCESS,
   FETCH_SINGLETWEET_FAILURE,
-  FETCH_RETWEET_SUCCESS
+  FETCH_RETWEET_SUCCESS,
+  POST_TWEET_BEGIN,
+  POST_TWEET_SUCCESS,
+  POST_TWEET_FAILURE
 } from './tweetsActions'
 import { tweetsInitialState } from '../initialState'
+import store from '../store'
 
 
 const tweetsReducer = (state = tweetsInitialState, action) => {
@@ -174,6 +178,34 @@ const tweetsReducer = (state = tweetsInitialState, action) => {
       return {
         ...state,
         data: newArray
+      }
+    }
+    case POST_TWEET_BEGIN: {
+      return {
+        ...state,
+        loading:true,
+        error: null,
+      }
+    }
+    case POST_TWEET_SUCCESS: {
+      let storeState = store.getState()
+      let userTimelineArray = state.userTimeline
+      if (storeState.userReducer.loggedUser) {
+        userTimelineArray.unshift(action.payload)
+      }
+      return {
+        ...state,
+        error: null,
+        loading:false,
+        userTimeline: userTimelineArray
+      }
+    }
+    case POST_TWEET_FAILURE: {
+      return {
+        ...state,
+        error: action.payload,
+        userTimeline: [],
+        loading: false
       }
     }
     default:

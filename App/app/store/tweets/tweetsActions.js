@@ -19,6 +19,9 @@ export const FETCH_SINGLETWEET_FAILURE = 'FETCH_SINGLETWEET_FAILURE'
 export const FETCH_RETWEET_BEGIN = 'FETCH_RETWEET_BEGIN'
 export const FETCH_RETWEET_SUCCESS = 'FETCH_RETWEET_SUCCESS'
 export const FETCH_RETWEET_FAILURE = 'FETCH_RETWEET_FAILURE'
+export const POST_TWEET_BEGIN = 'POST_TWEET_BEGIN'
+export const POST_TWEET_SUCCESS = 'POST_TWEET_SUCCESS'
+export const POST_TWEET_FAILURE = 'POST_TWEET_FAILURE'
 
 
 export const fetchTweetsTimeline = () => ({
@@ -119,5 +122,20 @@ export const fetchRetweetSuccess = (tweetUpdated) => ({
 
 export const fetchRetweetError = (error) => ({
     type: FETCH_RETWEET_FAILURE,
+    payload: error
+})
+
+export const postTweetBegin = (text) => ({
+    type: POST_TWEET_BEGIN,
+    payload: text
+})
+
+export const postTweetSuccess = (tweet) => ({
+    type: POST_TWEET_SUCCESS,
+    payload: tweet
+})
+
+export const postTweetFailure = (error) => ({
+    type: POST_TWEET_FAILURE,
     payload: error
 })
