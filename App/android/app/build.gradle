@@ -137,6 +137,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-push-notification')
     compile project(':react-native-camera')
     compile project(':react-native-vector-icons')
     compile project(':react-native-gesture-handler')
@@ -150,4 +151,13 @@ dependencies {
 task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
+}
+
+configurations.all {
+ resolutionStrategy.eachDependency { details ->
+     if (details.requested.group == 'com.android.support'
+             && !details.requested.name.contains('multidex') ) {
+         details.useVersion "26.1.0"
+     }
+ }
 }
