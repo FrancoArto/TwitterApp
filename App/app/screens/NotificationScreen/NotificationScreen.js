@@ -33,7 +33,8 @@ export default class NotificationScreen extends Component {
 
   sendNotification() {
     PushNotification.localNotification({
-      message: 'You pushed the notification button!'
+      message: 'You pushed the notification button!',
+      actions: '["Accept", "Reject"]'
     });
   };
 
@@ -47,11 +48,3 @@ export default class NotificationScreen extends Component {
     );
   };
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-});
