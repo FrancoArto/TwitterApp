@@ -6,7 +6,11 @@ export default class PushController extends Component {
   componentDidMount() {
     PushNotification.configure({
       onNotification: function(notification) {
-        console.log('NOTIFICATION: ', notification);
+        PushNotification.localNotification({
+          message: notification.notification.body,
+          title: notification.notification.title
+        });
+        console.log(notification.notification);
       },
       popInitialNotification: true,
     });

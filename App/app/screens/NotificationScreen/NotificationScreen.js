@@ -21,14 +21,14 @@ export default class NotificationScreen extends Component {
   
   // This will notify the user in 3 seconds after sending the app to the 
   // background (like after pressing the home button or switching apps)
-  handleAppStateChange(appState) {
+  handleAppStateChange(appState) {/*
     if (appState === 'background') {
       // Schedule a notification
       PushNotification.localNotificationSchedule({
         message: 'Scheduled delay notification message', // (required)
         date: new Date(Date.now() + (3 * 1000)) // in 3 secs
       });
-    }
+    }*/
   };
 
   sendNotification() {

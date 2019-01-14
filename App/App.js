@@ -3,8 +3,10 @@ import { Provider } from 'react-redux';
 import createStore from './app/store/store'
 import './app/config/reactotronConfig'
 import { AppNavigator } from './app/components/AppNavigator/AppNavigator';
-import { AsyncStorage } from 'react-native';
+import { AsyncStorage, Alert } from 'react-native';
 import firebase from 'react-native-firebase';
+import PushNotification from 'react-native-push-notification';
+
 
 
 const store = createStore
@@ -14,11 +16,12 @@ class App extends React.Component {
   async componentDidMount() {
     this.checkPermission();
     this.createNotificationListeners()
+    this.notificationListener();
+
   }
 
 
   componentWillUnmount() {
-    this.notificationListener();
     this.notificationOpenedListener();
   }
   
@@ -56,18 +59,15 @@ class App extends React.Component {
       let msg = JSON.stringify(message)
       const { title, body } = msg.NOTIFICATION.notification;
       this.showAlert(title, body);
-      console.log(message);
+      console.log(msg);
     });
   }
   
   showAlert(title, body) {
-    Alert.alert(
-      title, body,
-      [
-          { text: 'OK', onPress: () => console.log('OK Pressed') },
-      ],
-      { cancelable: false },
-    );
+    PushNotification.localNotification({
+      message: body,
+      title: title
+    });
   }
   
     //1
