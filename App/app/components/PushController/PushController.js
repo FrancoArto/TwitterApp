@@ -2,31 +2,44 @@ import React, { Component } from 'react';
 import firebase from 'react-native-firebase';
 import { AsyncStorage } from 'react-native';
 import PushNotification from 'react-native-push-notification';
+import { connect } from 'react-redux'
+import { settingsNotificationsYes, settingsNotificationsNo } from '../../store/notifications/notificationsActions';
 
-export default class PushController extends Component {
+class PushController extends Component {
+  constructor(props) {
+    super(props)
+  }
 
   async componentDidMount() {
     this.checkPermission();
     this.createNotificationListeners()
   }
 
-  
+
   componentWillUnmount() {
     this.notificationOpenedListener();
     this.notificationListener();
   }
-  
+
+  onNotification(openNotification) {
+    const { notification } = openNotification
+    if (notification) {
+      PushNotification.localNotification({
+        message: notification.body,
+        title: notification.title
+      });
+    } else {
+      if (openNotification.action === 'Yes') {
+        this.props.settingsNotificationsYes(openNotification.id)
+      }
+    }
+  }
+
 
   async createNotificationListeners() {
-  
+
     this.notificationListener = PushNotification.configure({
-      onNotification: function(notification) {
-        PushNotification.localNotification({
-          message: notification.notification.body,
-          title: notification.notification.title
-        });
-        console.log(notification.notification);
-      },
+      onNotification: (openNotification) => {this.onNotification(openNotification)},
       popInitialNotification: true,
     });
 
@@ -34,23 +47,23 @@ export default class PushController extends Component {
     * If your app is in background, you can listen for when a notification is clicked / tapped / opened as follows:
     * */
     this.notificationOpenedListener = firebase.notifications().onNotificationOpened((notificationOpen) => {
-        const { title, body } = notificationOpen.notification;
-        PushNotification.localNotification({
-          message: body,
-          title: title
-        })
+      const { title, body } = notificationOpen.notification;
+      PushNotification.localNotification({
+        message: body,
+        title: title
+      })
     });
-  
+
     /*
     * If your app is closed, you can check if it was opened by a notification being clicked / tapped / opened as follows:
     * */
     const notificationOpen = await firebase.notifications().getInitialNotification();
     if (notificationOpen) {
-        const { title, body } = notificationOpen.notification;
-        PushNotification.localNotification({
-          message: body,
-          title: title
-        })
+      const { title, body } = notificationOpen.notification;
+      PushNotification.localNotification({
+        message: body,
+        title: title
+      })
     }
     /*
     * Triggered for data only payload in foreground
@@ -61,43 +74,53 @@ export default class PushController extends Component {
     });
   }
 
-   //1
-   async checkPermission() {
+  //1
+  async checkPermission() {
     const enabled = await firebase.messaging().hasPermission();
     if (enabled) {
-        this.getToken();
+      this.getToken();
     } else {
-        this.requestPermission();
+      this.requestPermission();
     }
   }
-  
-    //3
+
+  //3
   async getToken() {
     let fcmToken = await AsyncStorage.getItem('fcmToken');
     if (!fcmToken) {
-        fcmToken = await firebase.messaging().getToken();
-        if (fcmToken) {
-            // user has a device token
-            await AsyncStorage.setItem('fcmToken', fcmToken);
-        }
+      fcmToken = await firebase.messaging().getToken();
+      if (fcmToken) {
+        // user has a device token
+        await AsyncStorage.setItem('fcmToken', fcmToken);
+      }
     }
     console.log(fcmToken)
   }
-  
-    //2
+
+  //2
   async requestPermission() {
     try {
-        await firebase.messaging().requestPermission();
-        // User has authorised
-        this.getToken();
+      await firebase.messaging().requestPermission();
+      // User has authorised
+      this.getToken();
     } catch (error) {
-        // User has rejected permissions
-        console.log('permission rejected');
+      // User has rejected permissions
+      console.log('permission rejected');
     }
   }
-  
-  
+
+
   render() {
     return null;
   }
 }
+
+function mapStateToProps() {
+  return {}
+}
+
+const mapDispatchToProps = {
+  settingsNotificationsYes: (id) => settingsNotificationsYes(id),
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PushController)
