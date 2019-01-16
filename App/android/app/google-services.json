@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1058005456826",
+    "firebase_url": "https://push-notifications-b1fb6.firebaseio.com",
+    "project_id": "push-notifications-b1fb6",
+    "storage_bucket": "push-notifications-b1fb6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1058005456826:android:1c1716396637b736",
+        "android_client_info": {
+          "package_name": "com.twitterapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1058005456826-3nj152jfvfn5di3fjv4caujappc7t7ed.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvF3FC7BgBDl4R5R_Z7qokqVRyvbbodeA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

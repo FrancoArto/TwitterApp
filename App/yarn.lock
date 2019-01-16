@@ -4547,6 +4547,11 @@ onetime@^2.0.0:
   dependencies:
     mimic-fn "^1.0.0"
 
+opencollective-postinstall@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/opencollective-postinstall/-/opencollective-postinstall-2.0.1.tgz#798e83e168f7b91949061c2683f762af747f17cc"
+  integrity sha512-saQQ9hjLwu/oS0492eyYotoh+bra1819cfAT5rjY/e4REWwuc8IgZ844Oo44SiftWcJuBiqp0SA0BFVbmLX0IQ==
+
 opn@^3.0.2:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/opn/-/opn-3.0.3.tgz#b6d99e7399f78d65c3baaffef1fb288e9b85243a"
@@ -5038,6 +5043,14 @@ react-native-easy-grid@0.2.0:
   dependencies:
     lodash "^4.11.1"
 
+react-native-firebase@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-firebase/-/react-native-firebase-5.2.0.tgz#5f5eea19bffbda583af80a9083a14d64648a7dbc"
+  integrity sha512-6IHkJCUlHB71M3kYGOcMQm7qR+OaTgen2HYvVLFjmrLhkW2IEvfipLt0sJfSDW3Mna7n+UDHeugsfViE2b8saA==
+  dependencies:
+    opencollective-postinstall "^2.0.0"
+    prop-types "^15.6.2"
+
 react-native-gesture-handler@^1.0.12:
   version "1.0.12"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.0.12.tgz#99a22f90212df299245357dbd3a9a01c788f310b"
@@ -5067,6 +5080,11 @@ react-native-keyboard-aware-scroll-view@0.8.0:
   dependencies:
     prop-types "^15.6.2"
     react-native-iphone-x-helper "^1.0.3"
+
+react-native-push-notification@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-push-notification/-/react-native-push-notification-3.1.2.tgz#a6129fb2897773a19c7b42bba1b51a9a4aac7df3"
+  integrity sha512-MjjPNXb2Cw7g1D41DtVbTVuGFCAtADxb91pAEFSkQ0AZ2gIooqYkWFHBL6woc15QHhtaZS8VT2GQoyW5OWlxIg==
 
 react-native-safe-area-view@0.11.0:
   version "0.11.0"
