@@ -3,7 +3,7 @@ import firebase from 'react-native-firebase';
 import { AsyncStorage } from 'react-native';
 import PushNotification from 'react-native-push-notification';
 import { connect } from 'react-redux'
-import { settingsNotificationsYes, settingsNotificationsNo } from '../../store/notifications/notificationsActions';
+import { settingsChanged } from '../../store/settings/settingsActions';
 
 class PushController extends Component {
   constructor(props) {
@@ -30,7 +30,28 @@ class PushController extends Component {
       });
     } else {
       if (openNotification.action === 'Yes') {
-        this.props.settingsNotificationsYes(openNotification.id)
+        let settings = Object.assign({}, this.props.settings)
+
+        switch (openNotification.id) {
+          case '1':
+            settings.verified = false
+            break;
+
+          case '2':
+            settings.following = false
+            break;
+          case '3':
+            settings.defaultInfo = false
+            break;
+          case '4':
+            settings.withLink = false
+            break;
+          case '5':
+            settings.withTruncatedText = false
+            break;
+          default:
+        }
+        this.props.settingsChanged(settings)
         PushNotification.clearLocalNotification(Number(openNotification.id))
       }
     }
@@ -40,7 +61,7 @@ class PushController extends Component {
   async createNotificationListeners() {
 
     this.notificationListener = PushNotification.configure({
-      onNotification: (openNotification) => {this.onNotification(openNotification)},
+      onNotification: (openNotification) => { this.onNotification(openNotification) },
       popInitialNotification: true,
     });
 
@@ -116,12 +137,14 @@ class PushController extends Component {
   }
 }
 
-function mapStateToProps() {
-  return {}
+function mapStateToProps(state, props) {
+  return {
+    settings: state.settingsReducer
+  }
 }
 
 const mapDispatchToProps = {
-  settingsNotificationsYes: (id) => settingsNotificationsYes(id),
+  settingsChanged: (settings) => settingsChanged(settings),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PushController)
