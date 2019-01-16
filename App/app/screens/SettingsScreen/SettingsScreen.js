@@ -11,8 +11,6 @@ import PropTypes from 'prop-types'
 import styles from './settingsScreen.style';
 import PushNotification from 'react-native-push-notification';
 import PushNotificationAndroid from 'react-native-push-notification'
-import NotificationActionController from '../../components/NotificationActionController/NotificationActionController';
-import PushController from '../../components/PushController/PushController';
 
 export class SettingsScreen extends Component {
   constructor(props) {

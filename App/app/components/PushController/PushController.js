@@ -31,6 +31,7 @@ class PushController extends Component {
     } else {
       if (openNotification.action === 'Yes') {
         this.props.settingsNotificationsYes(openNotification.id)
+        PushNotification.clearLocalNotification(Number(openNotification.id))
       }
     }
   }
