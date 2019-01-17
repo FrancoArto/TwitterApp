@@ -108,14 +108,14 @@ export class CameraScreen extends Component {
             <View style={styles.cameraBottom}>
             <TouchableOpacity
               onPress={this.discardPicture}
-              style={styles.cancel}
+              style={styles.actionButtons}
             >
               <Icon name='x' size={40} color={'white'} />
             </TouchableOpacity>
 
             <TouchableOpacity
               onPress={this.uploadPicture}
-              style={styles.accept}
+              style={styles.actionButtons}
             >
               <Icon name='check' size={40} color={'white'} />
             </TouchableOpacity>

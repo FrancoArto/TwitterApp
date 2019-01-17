@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import globalStyle from '../../global.style';
 
 const width = Dimensions.get('window').width;
 
@@ -8,9 +9,10 @@ export default StyleSheet.create({
     flexTweet: {
         flex: 1,
         flexDirection: 'row',
+        backgroundColor: globalStyle.colors.container,
 
         borderBottomWidth: 1,
-        borderColor: '#D5D5D5',
+        borderColor: globalStyle.colors.rowBorder,
     },
 
 
@@ -19,7 +21,7 @@ export default StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'flex-start',
 
-        padding: width/60, 
+        padding: globalStyle.spacings.S, 
     },
 
 
@@ -28,9 +30,7 @@ export default StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'flex-start',
 
-        paddingLeft: 0,
-        marginLeft: 0,
-        paddingRight: width/40, 
+        paddingRight: globalStyle.spacings.S, 
     },
 
     flexTitle: {
@@ -38,8 +38,7 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'flex-start',
 
-        paddingTop:  width/60, 
-        paddingBottom: width/60, 
+        paddingVertical:  globalStyle.spacings.XS, 
     },
     flexContent: {
         flex: 1,
@@ -50,47 +49,39 @@ export default StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
 
-        marginLeft: 0,
-        paddingLeft: 0,
-
-        paddingTop: width/80, 
-        paddingBottom: width/80, 
-        marginRight: width/50
+        paddingVertical: globalStyle.spacings.XS, 
+        marginRight: globalStyle.spacings.S
     },
 
     fontUserName: {
-        fontSize: width/24,
+        fontSize: globalStyle.fontSizes.M,
         fontWeight: 'bold',
-        color: '#040404'
+        color: globalStyle.colors.titleText
     },
     fontCountNameAndTime: {
-        fontSize: width/24,
-        color: '#D5D5D5'
+        fontSize: globalStyle.fontSizes.S,
+        color: globalStyle.colors.secondaryText
     },
     fontMainContent: {
-        fontSize: width/28,
-        color: '#5D5D5D'
+        fontSize: globalStyle.fontSizes.M,
+        color: globalStyle.colors.mainContentText
     },
     fontNumberIcons: {
-        fontSize: width/28,
-        color: '#5D5D5D',
+        fontSize: globalStyle.fontSizes.M,
+        color: globalStyle.colors.mainContentText,
 
-        marginRight: width/45
+        marginRight: globalStyle.spacings.S
     },
     retweeted: {
-        color: '#1DA1F2'
+        color: globalStyle.colors.retweeted
     },
 
     sizeIcons: {
-        marginLeft: 0,
-        paddingLeft: 0,
-
-        fontSize: width/20,
-        color: "#909090"
+        fontSize: globalStyle.fontSizes.M,
+        color: globalStyle.colors.tweetIcons
     },
     buttonIcons: {
-        marginHorizontal: 10,
-        padding: 0
+        marginHorizontal: globalStyle.spacings.M,
     },
     
 
@@ -99,8 +90,7 @@ export default StyleSheet.create({
         flexDirection: 'row',
         alignSelf: 'center',
 
-        paddingTop: width/80, 
-        paddingBottom: width/80
+        paddingVertical: globalStyle.spacings.XS, 
     },
     imageTweet: {
         flex: 1,
@@ -111,7 +101,7 @@ export default StyleSheet.create({
         
     },
     extraMarginWhitImg: {
-        marginRight: width/15
+        marginRight: globalStyle.spacings.M
     }
   });
   
