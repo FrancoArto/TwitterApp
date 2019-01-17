@@ -15,7 +15,7 @@ export class SingleTweetScreen extends Component {
     }
 
     goToUserProfile() {
-        this.props.fetchUserDataRequest(this.props.tweet.user.id)
+        this.props.dispatch(fetchUserDataRequest(this.props.tweet.user.id))
         this.props.navigation.navigate('UserProfile')
     }
 
@@ -99,11 +99,6 @@ export class SingleTweetScreen extends Component {
 
 }
 
-function mapDispatchToProps() {
-    return {
-        fetchUserDataRequest: (event) => fetchUserDataRequest(event)
-    }
-}
 
 function mapStateToProps(state, props) {
     return {
@@ -111,4 +106,4 @@ function mapStateToProps(state, props) {
         tweet: state.tweetsReducer.singleTweet,
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(SingleTweetScreen);
+export default connect(mapStateToProps)(SingleTweetScreen);
