@@ -93,7 +93,7 @@ export class HomeScreen extends Component {
       );
     } else if (this.props.data && !this.props.error) {
       return (
-        <View style={{ flex: 1, paddingTop: 20 }}>
+        <View style={styles.container}>
           <FlatList
             ref='listRef'
             data={this.props.data}

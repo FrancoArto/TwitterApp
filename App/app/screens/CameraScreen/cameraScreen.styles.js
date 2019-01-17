@@ -1,11 +1,12 @@
 import {StyleSheet, Dimensions} from 'react-native'
+import globalStyle from '../../global.style';
 
 var {width, height} = Dimensions.get('window');
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: 'transparent'
+    backgroundColor: globalStyle.colors.iconBackground
   },
   preview: {
     flex: 1,
@@ -14,44 +15,40 @@ export const styles = StyleSheet.create({
   },
   capture: {
     flex: 0,
-    backgroundColor: 'transparent',
+    backgroundColor: globalStyle.colors.iconBackground,
     borderRadius: 5,
-    padding: 15,
-    paddingHorizontal: 20,
+    padding: globalStyle.spacings.M,
+    paddingHorizontal: globalStyle.spacings.L,
     alignSelf: 'center',
   },
   rotate: {
     flex: 0,
-    backgroundColor: 'transparent',
+    backgroundColor: globalStyle.colors.iconBackground,
     borderRadius: 5,
-    paddingHorizontal: 5,
+    paddingHorizontal: globalStyle.spacings.XS,
     alignSelf: 'center',
   },
   cameraBottom: {
     flex: 0.15, 
     flexDirection: 'row', 
     justifyContent: 'space-around',
-    backgroundColor: 'black'
+    backgroundColor: globalStyle.colors.cameraBottom
   },
   showImage: {
     flex: 0.85,
     height: height,
     width: width
   },
-  cancel: {
+  actionButtons: {
     flex: 0,
-    backgroundColor: 'transparent',
+    backgroundColor: globalStyle.colors.iconBackground,
     borderRadius: 5,
-    paddingHorizontal: 5,
+    paddingHorizontal: globalStyle.spacings.XS,
     alignSelf: 'center',
-    margin: width/10,
+    margin: globalStyle.spacings.XL,
   },
-  accept: {
-    flex: 0,
-    backgroundColor: 'transparent',
-    borderRadius: 5,
-    paddingHorizontal: 5,
-    alignSelf: 'center',
-    margin: width/10,
+  cameraIcons: {
+    color: globalStyle.colors.cameraIcon,
+    fontSize: globalStyle.fontSizes.XXL
   }
 });

@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import globalStyle from '../../global.style';
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -6,7 +7,7 @@ const height = Dimensions.get('window').height;
 
 export default StyleSheet.create({
     activityIndicatorContainer: {
-        backgroundColor: "#fff",
+        backgroundColor: globalStyle.colors.container,
         alignItems: 'center',
         justifyContent: 'center',
         flex: 1
@@ -16,138 +17,111 @@ export default StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
 
-        backgroundColor: '#f4f4f4'
+        backgroundColor: globalStyle.colors.container
     },
 
 
     flexHead: {
-        flex: 0.5,
+        flex: 0.2,
         flexDirection: 'row',
 
         borderWidth: 0,
-        paddingTop: width / 60,
-        paddingBottom: 0,
-        margin: 0
+        paddingTop: globalStyle.spacings.XS,
     },
     retweeted: {
-        color: '#1DA1F2'
+        color: globalStyle.colors.retweeted
     },
 
     flexUserImg: {
-        flex: 1,
+        flex: 0.3,
         flexDirection: 'column',
         justifyContent: 'flex-start',
 
-        width: width / 4,
-        padding: width / 60
+        width: width / 6,
+        padding: globalStyle.spacings.XS
     },
 
     flexTitleColumn: {
-        flex: 1,
+        flex: 0.5,
         flexDirection: 'column',
-        justifyContent: 'flex-end',
+        justifyContent: 'flex-start',
 
         width: (width * 3) / 4,
-        padding: width / 60,
-        marginRight: width / 3,
-        marginTop: width / 60
+        padding: globalStyle.spacings.XS,
+        marginRight: globalStyle.spacings.XXL,
+        marginTop: globalStyle.spacings.XS
     },
     flexTitle: {
-        flex: 1,
+        alignSelf: 'flex-start',
         flexDirection: 'row',
-        justifyContent: 'center',
-
-        padding: 0,
-        margin: 0
+        justifyContent: 'flex-start',
     },
 
 
     flexContent: {
-        flex: 0.6,
         flexDirection: 'row',
 
         borderWidth: 0,
-        paddingRight: width / 60,
-        marginRight: width / 60,
-        paddingLeft: width / 60,
-        marginLeft: width / 60,
-        marginBottom: 0,
-        paddingBottom: 0,
-        marginTop: 0,
-        paddingTop: 0
+        paddingHorizontal: globalStyle.spacings.S,
+        marginHorizontal: globalStyle.spacings.S,
     },
 
 
     flexIcons: {
-        flex: 0.5,
+        flex: 0.2,
         flexDirection: 'row',
         alignSelf: 'center',
         justifyContent: 'center',
         height: height / 6,
 
-        marginLeft: 0,
-        marginRight: 0,
-        paddingLeft: 0,
-        paddingRight: 0,
-
-        paddingTop: width / 80,
-        margin: 0
+        paddingTop: globalStyle.spacings.XS,
     },
 
     fontUserName: {
-        fontSize: width / 20,
+        fontSize: globalStyle.fontSizes.L,
         fontWeight: 'bold',
-        color: '#040404'
+        color: globalStyle.colors.titleText
     },
     fontCountNameAndTime: {
-        fontSize: width / 26,
-        color: '#5D5D5D'
+        fontSize: globalStyle.fontSizes.M,
+        color: globalStyle.colors.secondaryText
     },
     fontMainContent: {
-        fontSize: width / 20,
-        color: '#5D5D5D'
+        fontSize: globalStyle.fontSizes.M,
+        color: globalStyle.colors.mainContentText
     },
     fontNumberIcons: {
-        fontSize: width / 18,
-        color: '#5D5D5D'
+        fontSize: globalStyle.fontSizes.M,
+        color: globalStyle.colors.mainContentText
     },
 
     sizeIcons: {
-        marginLeft: width / 80,
-        marginRight: width / 80,
+        marginHorizontal: globalStyle.spacings.S,
 
-        fontSize: width / 10,
-        color: "#909090"
+        fontSize: globalStyle.fontSizes.XL,
+        color: globalStyle.colors.mainContentText
     },
     buttonIcons: {
         flex: 1,
         flexDirection: 'column-reverse',
         alignSelf: 'center',
-
-        margin: 0,
-        padding: 0
     },
 
 
     flexImage: {
-        flex: 1,
+        flex: 0.5,
         flexDirection: 'row',
-
-        marginTop: 0,
-        paddingTop: 0,
-        paddingBottom: width / 80,
+        marginTop: globalStyle.spacings.M,
+        paddingBottom: globalStyle.spacings.XS,
         justifyContent: 'center'
     },
     imageTweet: {
-        marginBottom: 0,
-        paddingBottom: 0,
-        marginTop: '2%',
-        paddingTop: 0,
+        marginTop: globalStyle.spacings.XS,
         borderRadius: 20,       
         height: '90%',
         flex: 0.98,
     },
     linkStyle: {
-        color: '#2980b9',
+        color: globalStyle.colors.link,
     }
 });

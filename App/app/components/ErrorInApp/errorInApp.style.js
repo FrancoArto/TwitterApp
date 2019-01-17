@@ -1,16 +1,17 @@
 import { StyleSheet } from 'react-native';
+import GlobalStyles from '../../global.style'
 
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#cc3132'
+      backgroundColor: GlobalStyles.colors.errorBox
     },
     errorMessage:{
-        color: 'white',
+        color: GlobalStyles.colors.buttonText,
         fontWeight:'bold'
     },
     errorContainer:{
-        marginLeft: 8
+        marginLeft: GlobalStyles.spacings.S
     }
 
 });

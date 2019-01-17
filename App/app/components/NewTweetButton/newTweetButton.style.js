@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native'
+import GlobalStyles from '../../global.style'
 
 var {width, height} = Dimensions.get('window');
 
@@ -8,15 +9,15 @@ export const styles = StyleSheet.create({
     width: height/12,
     height: height/12,
     borderRadius: 30,
-    backgroundColor: '#1DA1F2',
+    backgroundColor: GlobalStyles.colors.mainButtons,
     position: 'absolute',
-    bottom: height/20,
-    right: width/18,
+    bottom: GlobalStyles.spacings.S,
+    right: GlobalStyles.spacings.M,
     justifyContent: 'center',
     alignItems: 'center'
   },
   buttonText: {
-    color: 'white',
-    fontSize: height/35
+    color: GlobalStyles.colors.buttonText,
+    fontSize: GlobalStyles.fontSizes.M
   }
 })

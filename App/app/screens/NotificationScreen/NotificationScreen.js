@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppState, View, Button, Text, StyleSheet } from 'react-native';
+import { View, Button } from 'react-native';
 import PushNotification from 'react-native-push-notification';
 
 export default class NotificationScreen extends Component {

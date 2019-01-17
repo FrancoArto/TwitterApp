@@ -33,20 +33,11 @@ export class SingleTweetScreen extends Component {
                 </View>
             );
         } else {
-            let img
-            if ((this.props.tweet.entities.media) && (this.props.tweet.entities.media.length > 0)) {
-                let array = this.props.tweet.entities.media[0]
-                img = <View style={[styles.flexImage]}>
-                    <Image
-                        style={[styles.imageTweet]}
-                        source={{ uri: array.media_url }}
-                    />
-                </View>
+
+
+            if (this.props.tweet.retweeted) {
+                retweetsStyle.push(styles.retweeted);
             }
-            
-        if(this.props.tweet.retweeted){
-            retweetsStyle.push(styles.retweeted);
-        }
 
             return (
                 <View style={[styles.flexTweet]}>
@@ -62,7 +53,6 @@ export class SingleTweetScreen extends Component {
                             <View style={[styles.flexTitle]}>
                                 <Text style={[styles.fontUserName]}> {this.props.tweet.user.name} </Text>
                             </View>
-
                             <View style={[styles.flexTitle]}>
                                 <Text style={[styles.fontCountNameAndTime]}> @{this.props.tweet.user.screen_name}</Text>
                             </View>
@@ -77,7 +67,13 @@ export class SingleTweetScreen extends Component {
                     </View>
 
 
-                    {img}
+                    {this.props.tweet.entities.media &&
+                        <View style={[styles.flexImage]}>
+                            <Image
+                                style={[styles.imageTweet]}
+                                source={{ uri: this.props.tweet.entities.media[0].media_url }}
+                            />
+                        </View>}
 
 
                     <View style={[styles.flexIcons]}>

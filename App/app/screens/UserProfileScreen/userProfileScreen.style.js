@@ -1,15 +1,16 @@
 import { StyleSheet,Dimensions } from 'react-native';
+import globalStyle from '../../global.style';
 
 export const styles = StyleSheet.create({
     activityIndicatorContainer:{
-        backgroundColor: "#fff",
+        backgroundColor: globalStyle.colors.container,
         alignItems: 'center',
         justifyContent: 'center',
         flex: 1
     },
     mainContainer: {
         flex:1,
-    backgroundColor: '#F5F5F5'
+    backgroundColor: globalStyle.colors.container
 
     },
     userData: {

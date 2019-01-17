@@ -1,13 +1,14 @@
 import { StyleSheet } from 'react-native';
+import globalStyle from '../../global.style';
 
 const styles = StyleSheet.create({
     card:{
-      backgroundColor: '#79a6d2'
+      backgroundColor: globalStyle.colors.cardBackground
     },
     
     cardText: {
       fontWeight: '800',
-      color: '#FFFFFF'
+      color: globalStyle.colors.buttonText
     }
 });
 

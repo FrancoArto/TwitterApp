@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import globalStyle from '../../global.style';
 
 const styles = StyleSheet.create({
   activityIndicatorContainer:{
@@ -9,9 +10,9 @@ const styles = StyleSheet.create({
 
   container: {
     flex:1, 
-    paddingTop:10,
-    paddingHorizontal: 5,
-    backgroundColor: '#f5f5f5',
+    paddingTop: globalStyle.spacings.S,
+    paddingHorizontal: globalStyle.spacings.XS,
+    backgroundColor: globalStyle.colors.container,
   }
 });
 

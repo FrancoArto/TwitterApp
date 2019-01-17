@@ -1,16 +1,17 @@
 import { StyleSheet,Dimensions } from 'react-native';
+import globalStyle from '../../global.style';
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 export const styles = StyleSheet.create({
     mainContainer:{
         flex:1,
-        borderBottomColor:'#AAA',
-        borderBottomWidth:0.5,
-        backgroundColor:'white'
+        borderBottomColor: globalStyle.colors.rowBorder,
+        borderBottomWidth: 0.5,
+        backgroundColor: globalStyle.colors.container
     },
     bannerContainer:{
-        flex:22
+        flex: 22
     },
     banner:{
         width: width,
@@ -19,30 +20,31 @@ export const styles = StyleSheet.create({
     userLogoAndNameContainer:{
         flex:20,
         flexDirection:'row',
-        marginLeft: width/65
+        marginLeft: globalStyle.spacings.S
     },
     userImage: {
-        borderColor: 'white',
+        borderColor: globalStyle.colors.container,
         borderWidth: 3
         
     },
     userName:{
-        fontSize: width/18,
-        fontWeight: 'bold'
+        fontSize: globalStyle.fontSizes.L,
+        fontWeight: 'bold',
+        color: globalStyle.colors.titleText
     },
     userDispayedName:{
-        color: '#9c9c9c'
+        color: globalStyle.colors.secondaryText
     },
     userNameAndHash:{
-        marginLeft:width/22,
-        marginTop:width/10      
+        marginLeft:globalStyle.spacings.S,
+        marginTop: globalStyle.spacings.M      
     },
     desciptionView:{
-        marginTop:width/55
+        marginTop: globalStyle.spacings.XS
     },
     userDescriptionContainer:{
         flex:35,
-        marginLeft:width/30
+        marginLeft: globalStyle.spacings.S
     },
     userInfo:{
         flex:22
@@ -52,19 +54,19 @@ export const styles = StyleSheet.create({
     },
     userStats:{
         flexDirection:'row',
-        marginTop:5        
+        marginTop: globalStyle.spacings.XS        
     },
     desciption:{
-        fontSize:width/26,
+        fontSize: globalStyle.fontSizes.M,
         fontWeight:'400',
-        color: '#5D5D5D'
+        color: globalStyle.colors.secondaryText
     },
     statsColor:{
-        color: '#989898',
-        fontSize:width/28
+        color: globalStyle.colors.secondaryText,
+        fontSize: globalStyle.fontSizes.M
     },
     iconStyle: {
-        fontSize: 20
+        fontSize: globalStyle.fontSizes.L
     }
 
 })

@@ -32,14 +32,14 @@ class Search extends Component {
     render() {
       let icon
       if (this.props.searchText !== '') {
-        icon = <Icon active name='close' style={{color: 'black'}} onPress={this.handleClearPress} />              
+        icon = <Icon active name='close' style={styles.resetIcon} onPress={this.handleClearPress} />              
       } 
         return(
           <View style={styles.container}>
             <Content>
               <Item style={styles.hideBottomBorder}>
                 <Item style={styles.input}> 
-                  <Icon active name='search' style={{color: 'lightskyblue'}} />
+                  <Icon active name='search' style={styles.searchIcon} />
                   <Input value={this.props.searchText} onChangeText={this.onChangeText} />
                   {icon}
                 </Item>

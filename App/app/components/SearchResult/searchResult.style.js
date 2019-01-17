@@ -1,4 +1,6 @@
 import { StyleSheet } from 'react-native';
+import globalStyle from '../../global.style';
+
 
 const styles = StyleSheet.create({
   activityIndicatorContainer:{
@@ -14,18 +16,18 @@ const styles = StyleSheet.create({
 
   row:{
       borderBottomWidth: 1,
-      borderColor: "#ccc",
-      padding: 10
+      borderColor: globalStyle.colors.rowBorder,
+      padding: globalStyle.spacings.S
   },
 
   title:{
-      fontSize: 15,
+      fontSize: globalStyle.fontSizes.M,
       fontWeight: "600"
   },
 
   description:{
-      marginTop: 5,
-      fontSize: 14,
+      marginTop: globalStyle.spacings.XS,
+      fontSize: globalStyle.fontSizes.S,
   }
 });
 
