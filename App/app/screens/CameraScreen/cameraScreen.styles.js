@@ -46,5 +46,9 @@ export const styles = StyleSheet.create({
     paddingHorizontal: globalStyle.spacings.XS,
     alignSelf: 'center',
     margin: globalStyle.spacings.XL,
+  },
+  cameraIcons: {
+    color: globalStyle.colors.cameraIcon,
+    fontSize: globalStyle.fontSizes.XXL
   }
 });

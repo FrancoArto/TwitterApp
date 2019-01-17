@@ -85,14 +85,14 @@ export class CameraScreen extends Component {
               onPress={this.toggleCamera}
               style={styles.rotate}
             >
-              <Icon name='refresh-cw' size={30} color={'white'} />
+              <Icon name='refresh-cw' style={styles.cameraIcons} />
             </TouchableOpacity>
 
             <TouchableOpacity
               onPress={this.takePicture.bind(this)}
               style={styles.capture}
             >
-              <Icon name='camera' size={48} color={'white'} />
+              <Icon name='camera' style={styles.cameraIcons} />
             </TouchableOpacity>
           </View>
         </View>
@@ -110,14 +110,14 @@ export class CameraScreen extends Component {
               onPress={this.discardPicture}
               style={styles.actionButtons}
             >
-              <Icon name='x' size={40} color={'white'} />
+              <Icon name='x' style={styles.cameraIcons} />
             </TouchableOpacity>
 
             <TouchableOpacity
               onPress={this.uploadPicture}
               style={styles.actionButtons}
             >
-              <Icon name='check' size={40} color={'white'} />
+              <Icon name='check' style={styles.cameraIcons} />
             </TouchableOpacity>
           </View>
          

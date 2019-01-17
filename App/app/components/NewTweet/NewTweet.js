@@ -49,7 +49,7 @@ export class NewTweet extends Component {
               this.setModalInvisible();
             }}
             style={styles.closeButton}>
-              <Icon name='x' size={40} color={'#1DA1F2'} />
+              <Icon name='x' style={styles.closeIcon} />
             
           </TouchableHighlight>
           <TextInput

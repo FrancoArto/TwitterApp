@@ -27,7 +27,10 @@ const colors = {
   tweetIcons: colorReferences.gray,
   link: colorReferences.mariner,
   iconBackground: colorReferences.transparent,
-  cameraBottom: colorReferences.black
+  cameraBottom: colorReferences.black,
+  searchIcon: colorReferences.dodgerBlue,
+  resetIcon: colorReferences.black,
+  cameraIcon: colorReferences.white
 }
 
 const spacings = {

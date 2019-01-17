@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import GlobalStyles from '../../global.style'
+import globalStyle from '../../global.style';
 
 const styles = StyleSheet.create({
     container: {
@@ -10,22 +10,27 @@ const styles = StyleSheet.create({
     input: {
       width: '70%',
       height: '80%',
-      borderColor: GlobalStyles.colors.rowBorder,
+      borderColor: globalStyle.colors.rowBorder,
       borderTopWidth: 0.5,
       borderBottomWidth: 0.5,
       borderLeftWidth: 0.5,
       borderRightWidth: 0.5,
-      marginTop: GlobalStyles.spacings.XS,
-      marginLeft: GlobalStyles.spacings.S,
-      paddingLeft: GlobalStyles.spacings.XS
+      marginTop: globalStyle.spacings.XS,
+      marginLeft: globalStyle.spacings.S,
+      paddingLeft: globalStyle.spacings.XS
     },
-
+    searchIcon: {
+      color: globalStyle.colors.searchIcon
+    },
+    resetIcon: {
+      color: globalStyle.colors.resetIcon
+    },
     searchButton: {
       width:'30%',
       justifyContent: 'center',
       height: '80%',
-      marginTop: GlobalStyles.spacings.XS,
-      paddingRight: GlobalStyles.spacings.M,
+      marginTop: globalStyle.spacings.XS,
+      paddingRight: globalStyle.spacings.M,
     },
 
     hideBottomBorder: {
@@ -33,9 +38,9 @@ const styles = StyleSheet.create({
     },
 
     searchButtonText: {
-      color: GlobalStyles.colors.buttonText,
+      color: globalStyle.colors.buttonText,
       textAlign: 'center',
-      marginHorizontal: GlobalStyles.spacings.L
+      marginHorizontal: globalStyle.spacings.L
     }
 });
 

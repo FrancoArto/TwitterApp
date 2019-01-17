@@ -34,7 +34,7 @@ export class UserInfo extends Component {
         let formatCreationDate =unFormatCreationDate.split(" ", unFormatCreationDate.lenght);
         if(this.props.user.url){
             userLink = <TouchableOpacity onPress={() => Linking.openURL(this.props.user.url)}>
-                            <Text style={{color:'blue'}}><Icon type="EvilIcons" name="link"/> {this.props.user.url}</Text>
+                            <Text style={styles.statsColor}><Icon type="EvilIcons" name="link"/> {this.props.user.url}</Text>
                          </TouchableOpacity>
         }
         if(this.props.location){
